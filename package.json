@@ -1,0 +1,37 @@
+{
+  "name": "Blok-Tech",
+  "version": "1.0.0",
+  "description": "<h1>Blok-Tech</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precompress": "{{ executes BEFORE the `compress` script }}",
+    "compress": "{{ run command to compress files }}",
+    "postcompress": "{{ executes AFTER `compress` script }}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kitch41/Blok-Tech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kitch41/Blok-Tech/issues"
+  },
+  "homepage": "https://github.com/Kitch41/Blok-Tech#readme",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "slug": "^8.2.2"
+  },
+  "devDependencies": {
+    "ejs-lint": "^2.0.0"
+  }
+}
