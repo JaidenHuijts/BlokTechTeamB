@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 
+
 // mongo DB connect
 
 const { MongoClient } = require("mongodb")
@@ -73,30 +74,33 @@ const coll = db.collection("Data")
 
 //Home Get
 
-app.get('/', async (req, res) => {
-  try {
-    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    const db = client.db("User1")
-    const coll = db.collection("Data")
+<%- include('./routes/home.ejs') %>
 
 
-    const datacollected = await coll.find({}).limit(1).toArray()
-    console.log("is the data collected?", datacollected)
+// app.get('/', async (req, res) => {
+//   try {
+//     const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//     const db = client.db("User1")
+//     const coll = db.collection("Data")
 
-    res.render('index.ejs', { datacollected: datacollected })
 
-    client.close()
+//     const datacollected = await coll.find({}).limit(1).toArray()
+//     console.log("is the data collected?", datacollected)
+
+//     res.render('index.ejs', { datacollected: datacollected })
+
+//     client.close()
 
 
-  } catch (error) {
-    console.error(error)
-    res.status(500).send('Error retrieving data')
-  }
-});
+//   } catch (error) {
+//     console.error(error)
+//     res.status(500).send('Error retrieving data')
+//   }
+// });
 
-app.on('close', () => {
-  client.close()
-});
+// app.on('close', () => {
+//   client.close()
+// });
 
 //profile edit get
 
