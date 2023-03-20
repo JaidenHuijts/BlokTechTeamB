@@ -74,7 +74,7 @@ const coll = db.collection("Data")
 
 //Home Get
 
-<%- include('./routes/home.ejs') %>
+include('./routes/home.ejs')
 
 
 // app.get('/', async (req, res) => {
