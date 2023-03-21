@@ -5,21 +5,22 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 var bodyParser = require('body-parser')
 
+// const wiki = require("./wiki.js");
+// router.use("/wiki", wiki)
 
 
 
-
-const app = express()
+const router = express()
 const port = 1337
 
 
-app.set('view engine', 'ejs')
+router.set('view engine', 'ejs')
 
-app.use(express.static('static'))
+router.use(express.static('static'))
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.urlencoded({ extended: true }))
+router.use(bodyParser.json())
+router.use(bodyParser.urlencoded({ extended: true }))
+router.use(express.urlencoded({ extended: true }))
 
 
 
@@ -74,37 +75,32 @@ const coll = db.collection("Data")
 
 //Home Get
 
-include('./routes/home.ejs')
+
+router.get('/', async (req, res) => {
+  try {
+    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    const db = client.db("User1")
+    const coll = db.collection("Data")
 
 
-// app.get('/', async (req, res) => {
-//   try {
-//     const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-//     const db = client.db("User1")
-//     const coll = db.collection("Data")
+    const datacollected = await coll.find({}).limit(1).toArray()
+    console.log("is the data collected?", datacollected)
+
+    res.render('index.ejs', { datacollected: datacollected })
+
+    client.close()
 
 
-//     const datacollected = await coll.find({}).limit(1).toArray()
-//     console.log("is the data collected?", datacollected)
+  } catch (error) {
+    console.error(error)
+    res.status(500).send('Error retrieving data')
+  }
+});
 
-//     res.render('index.ejs', { datacollected: datacollected })
 
-//     client.close()
+// profile edit get
 
-
-//   } catch (error) {
-//     console.error(error)
-//     res.status(500).send('Error retrieving data')
-//   }
-// });
-
-// app.on('close', () => {
-//   client.close()
-// });
-
-//profile edit get
-
-app.get('/edit', (req, res) => {
+router.get('/edit', (req, res) => {
   res.render('edit.ejs')
 })
 
@@ -112,8 +108,9 @@ app.get('/edit', (req, res) => {
 
 // -----------------------------trial and error (mostly error) -----------------------------//
 
+const dataId = ObjectId("64199f7d7c9d761691c42276")
 
-app.post('/add-data', async (req, res) => {
+router.post('/add-data', async (req, res) => {
 
   console.log("running postroute")
 
@@ -131,7 +128,7 @@ app.post('/add-data', async (req, res) => {
   
 
     await collection.replaceOne( 
-      { _id: "1" },          
+      { _id: dataId },          
     {
       username: username,                
       tag: tag,                
@@ -154,14 +151,18 @@ app.post('/add-data', async (req, res) => {
 
 //404 send
 
-app.get('*', (req, res) => {
+router.get('*', (req, res) => {
   res.send("error 404, page not found")
 })
 
 
 
+router.on('close', () => {
+  client.close()
+});
+
 // listener
 
-app.listen(port, () => {
+router.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
