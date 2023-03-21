@@ -1,168 +1,79 @@
 
 const express = require('express')
 let ejs = require('ejs')
-const mongoose = require('mongoose')
 require('dotenv').config()
 var bodyParser = require('body-parser')
-
 // const wiki = require("./wiki.js");
 // router.use("/wiki", wiki)
-
-
-
-const router = express()
 const port = 1337
-
-
+const app = express()
+const router = express()
 router.set('view engine', 'ejs')
 
-router.use(express.static('static'))
+app.use(express.static('static'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 
-router.use(bodyParser.json())
-router.use(bodyParser.urlencoded({ extended: true }))
-router.use(express.urlencoded({ extended: true }))
+const registrerenRouter = require('./routes/registreren');
+const filterenRouter = require('./routes/filteren');
+const likenRouter = require('./routes/liken');
+const matchenRouter = require('./routes/matchen');
+// const { database }  = require('./routes/dataschema');
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 
+// Connect Mongoose 
 
+const mongoose = require('mongoose');
+// const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
 
-// mongo DB connect
+app.set('view engine', 'ejs')
 
-const { MongoClient } = require("mongodb")
-const { update, result } = require('lodash')
-
-const uri = process.env.DB_STRING
-
-const client = new MongoClient(uri, { useNewUrlParser:true, useUnifiedTopology: true})
-
-const db = client.db("User1")
-const coll = db.collection("Data")
-
-
-
-// failed experiment V
-
-// async function run() {
-//   try {
-//     await client.connect()
-
-//     // database and collection code goes here
-
-//     // find code goes here
-//     await coll.find(
-//       {_id: "1"}, 
-//       {
-//         username: 1,
-//         _id: 0
-
-//       }).limit(1).toArray(function(err, datacollected) {
-//         console.log(datacollected)
-//       })
-
-//     // iterate code goes here
-//     // await result.forEach(console.log)
-    
-//     // insert code here
-
-//   } finally {
-//     // await client.close();
-    
-//   }
+// async function main() {
+//   await mongoose.connect(uri,{
+//     dbName: process.env.DATABASE_NAME,
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   });
+//   console.log("Succesfully connected")
 // }
-// // run().catch(console.dir);
+// main().catch(err => console.log(err));
 
+// Routing
 
-
-
-//Home Get
-
-
-router.get('/', async (req, res) => {
-  try {
-    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    const db = client.db("User1")
-    const coll = db.collection("Data")
-
-
-    const datacollected = await coll.find({}).limit(1).toArray()
-    console.log("is the data collected?", datacollected)
-
-    res.render('index.ejs', { datacollected: datacollected })
-
-    client.close()
-
-
-  } catch (error) {
-    console.error(error)
-    res.status(500).send('Error retrieving data')
-  }
+app.get('/', (req, res) => {
+  res.render('index')
 });
 
+app.use('/registreren', registrerenRouter)
 
 // profile edit get
-
-router.get('/edit', (req, res) => {
+  
+app.get('/edit', (req, res) => {
   res.render('edit.ejs')
 })
 
+app.use('/filteren', filterenRouter)
 
+app.use('/liken', likenRouter)
 
-// -----------------------------trial and error (mostly error) -----------------------------//
-
-const dataId = ObjectId("64199f7d7c9d761691c42276")
-
-router.post('/add-data', async (req, res) => {
-
-  console.log("running postroute")
-
-  const formdata = req.body
-  const username = req.body.username
-  const tag = req.body.tag
-  const firstname = req.body.firstname
-  const lastname = req.body.lastname
-  const email = req.body.email
-  const age = req.body.age
-  const collection = client.db("User1").collection('Data')
-
-
-
-  
-
-    await collection.replaceOne( 
-      { _id: dataId },          
-    {
-      username: username,                
-      tag: tag,                
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      age: age,
-    })            
-    
-    console.log('Account aangemaakt voor', username )
-
-    // niet render naar index maar route
-
-
-
-    res.redirect('/')
-
-  
-});
+app.use('/matchen', matchenRouter)
 
 //404 send
 
-router.get('*', (req, res) => {
-  res.send("error 404, page not found")
-})
+app.use(function (req, res) {
+  res.status(400).render('404')
+});
 
-
-
-router.on('close', () => {
+app.on('close', () => {
   client.close()
 });
 
 // listener
 
-router.listen(port, () => {
+app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
