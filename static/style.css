@@ -1,83 +1,9 @@
 :root {
-  --clr-mainbluedark: #161525;
-  --clr-mainbluelighter: #222131;
-  --clr-mainbutton: #f9b321;
-  --clr-whitetext:#FFFFFF;
-  --clr-blacktext: #000000;
+
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-  background-image: url(./images/Background-pattern-blue.jpg);
-  background-size: cover;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Navbar */
-
-nav{
-  background-color: rgb(15, 15, 15);
-}
-
-.wrapper img{
-  width: 120px;
-  height: 50px;
-  margin-top: .8em;
-  margin-left: 5%;
-  float: left;
-  cursor: pointer;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 1.5em 1em;
-  margin-top: 0;
-  justify-content: flex-end;
-}
-
-nav li a {
-  color: white;
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  height: 30px;
-  letter-spacing: 1px;
-  margin: 0 14px;
-  padding: 0 4px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-}
-
-nav li a:before, nav li a:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -1px;
-}
-
-nav li a:before {
-  left: 0;
-  transition: 0.5s;
-}
-
-nav li a:after {
-  background: rgb(255, 243, 23);
-  right: 0;
-}
-
-nav li a:hover:before {
-  background: rgb(255, 243, 23);
-  width: 100%;
-  transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
 }
 
