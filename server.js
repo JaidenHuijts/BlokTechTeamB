@@ -1,8 +1,6 @@
-
 const express = require('express')
 let ejs = require('ejs')
 require('dotenv').config()
-var bodyParser = require('body-parser')
 // const wiki = require("./wiki.js");
 // router.use("/wiki", wiki)
 const port = 1337
@@ -11,50 +9,40 @@ const router = express()
 router.set('view engine', 'ejs')
 
 app.use(express.static('static'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 
+const inlogRoute = require('./routes/inloggen');
 const registrerenRouter = require('./routes/registreren');
 const filterenRouter = require('./routes/filteren');
 const likenRouter = require('./routes/liken');
 const matchenRouter = require('./routes/matchen');
 // const { database }  = require('./routes/dataschema');
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.urlencoded({ extended: true }))
-
 // Connect Mongoose 
 
 const mongoose = require('mongoose');
-// const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
+const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
 
 app.set('view engine', 'ejs')
 
-// async function main() {
-//   await mongoose.connect(uri,{
-//     dbName: process.env.DATABASE_NAME,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   });
-//   console.log("Succesfully connected")
-// }
-// main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(uri,{
+    dbName: process.env.DATABASE_NAME,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  console.log("Succesfully connected")
+}
+main().catch(err => console.log(err));
 
 // Routing
 
-app.get('/', (req, res) => {
-  res.render('index')
-});
+
+
 
 app.use('/registreren', registrerenRouter)
 
-// profile edit get
-  
-app.get('/edit', (req, res) => {
-  res.render('edit.ejs')
-})
+app.use('/', inlogRoute)
 
 app.use('/filteren', filterenRouter)
 
