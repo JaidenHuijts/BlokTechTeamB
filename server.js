@@ -1,8 +1,7 @@
 const express = require('express')
 let ejs = require('ejs')
 require('dotenv').config()
-// const wiki = require("./wiki.js");
-// router.use("/wiki", wiki)
+
 const port = 1337
 const app = express()
 const router = express()
