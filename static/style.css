@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 /*----------------*/
 /* Navbar */
 /*----------------*/
@@ -63,12 +67,12 @@ nav li a:before {
 }
 
 nav li a:after {
-  background: rgb(255, 55, 95);
+  background: rgb(255, 247, 14);
   right: 0;
 }
 
 nav li a:hover:before {
-  background: rgb(255, 55, 95);
+  background: rgb(255, 247, 14);
   width: 100%;
   transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
@@ -113,7 +117,3 @@ nav li a:hover:before {
 /*---------*/
 /* Matchen */
 /*---------*/
-
-.matchen-page h1{
-  color: white;
-}
