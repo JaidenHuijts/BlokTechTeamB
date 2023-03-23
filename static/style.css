@@ -77,6 +77,11 @@ nav li a:hover:before {
   transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
 
+.wrapper img{
+  height: 50px;
+  width: auto;
+}
+
 
 /*----------------*/
 /* login page css */
