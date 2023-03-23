@@ -42,6 +42,8 @@ main().catch(err => console.log(err));
 
 app.use('/registreren', registrerenRouter)
 
+app.use('/', inlogRoute)
+
 app.use('/filteren', filterenRouter)
 
 app.use('/liken', likenRouter)
