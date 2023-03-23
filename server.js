@@ -1,4 +1,3 @@
-
 const express = require('express')
 let ejs = require('ejs')
 require('dotenv').config()
@@ -28,19 +27,19 @@ app.use(express.urlencoded({ extended: true }))
 // Connect Mongoose 
 
 const mongoose = require('mongoose');
-// const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
+const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
 
 app.set('view engine', 'ejs')
 
-// async function main() {
-//   await mongoose.connect(uri,{
-//     dbName: process.env.DATABASE_NAME,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   });
-//   console.log("Succesfully connected")
-// }
-// main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(uri,{
+    dbName: process.env.DATABASE_NAME,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  console.log("Succesfully connected")
+}
+main().catch(err => console.log(err));
 
 // Routing
 
