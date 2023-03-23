@@ -2,7 +2,11 @@ const express = require('express')
 const router = express.Router()
 
 
+router.get('/registreren', (req, res) => {
+    res.render('registreren')
+})
 
+module.exports =  router
 
 
 

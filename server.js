@@ -11,7 +11,7 @@ router.set('view engine', 'ejs')
 app.use(express.static('static'))
 app.use(express.urlencoded({ extended: true }))
 
-const inlogRoute = require('./routes/inloggen')
+const inlogRoute = require('./routes/inloggen');
 const registrerenRouter = require('./routes/registreren');
 const filterenRouter = require('./routes/filteren');
 const likenRouter = require('./routes/liken');
