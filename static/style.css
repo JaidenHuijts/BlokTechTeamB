@@ -1,5 +1,6 @@
 :root {
-
+ --clr-backgroundblack: black;
+ --clr-textwhite: white;
 }
 
 *, *::after, *::before {
@@ -7,3 +8,20 @@
   padding: 0;
 }
 
+
+
+
+/* login page css */
+
+
+.inloggen {
+  background-color: black;
+}
+
+.inloggen>section:nth-of-type(1) {
+
+}
+
+.inloggen h1 {
+  color: var(--clr-textwhite);
+}

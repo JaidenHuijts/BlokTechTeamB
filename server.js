@@ -43,6 +43,8 @@ app.set('view engine', 'ejs')
 
 app.use('/registreren', registrerenRouter)
 
+app.use('/', inlogRoute)
+
 app.use('/filteren', filterenRouter)
 
 app.use('/liken', likenRouter)
