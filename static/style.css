@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'auxilia';
+  src: url('auxilia-bold-webfont.woff2') format('woff2'),
+       url('auxilia-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'auxilia';
+  src: url('auxilia-black-webfont.woff2') format('woff2'),
+       url('auxilia-black-webfont.woff') format('woff');
+  font-weight: black;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'auxilia';
+  src: url('auxilia-webfont.woff2') format('woff2'),
+       url('auxilia-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
  --clr-background: grey;
  --clr-textwhite: white;
@@ -124,3 +148,21 @@ nav li a:hover:before {
 /*---------*/
 /* Matchen */
 /*---------*/
+
+.matchen-page h1{
+  padding: 2em;
+  font-family: 'auxilia';
+}
+
+.match-card-container{
+  display: flex;
+  justify-content: center;
+}
+
+.match-card{
+  border: 1px solid white;
+  width: 300px;
+  height: 500px;
+  display: flex;
+}
+
