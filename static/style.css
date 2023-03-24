@@ -193,6 +193,42 @@ nav li a:hover:before {
 /* Registreren */
 /*-------------*/
 
+.registreren {
+  background-image: url(./images/Background-festflirt.png);
+  background-size: cover;
+  background-position: 0em -4em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.registreren>section:nth-of-type(1) {
+  width: 70%;
+  height: 37em;
+  background-color: rgb(30, 30, 30, 0.8);
+  border: 2px solid rgb(255, 247, 14);
+  border-radius: 25px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
+.registreren>section:nth-of-type(1)>h1 {
+
+  color: yellow;
+  margin-top: 1em;
+  margin-bottom: auto;
+
+}
+
+
+
 
 /*---------------------*/
 /* Festivals toevoegen */
