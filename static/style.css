@@ -182,15 +182,15 @@ nav li a:hover:before {
 .dislike-button{
   float: left;
   align-self: center;
-  border: none;
   background: none;
+  border: none;
 }
 
 .like-button{
   float: right;
   align-self: center;
-  border: none;
   background: none;
+  border: none;
 }
 
 .dislike-button:hover,
