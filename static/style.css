@@ -1,5 +1,5 @@
 :root {
- --clr-backgroundblack: black;
+ --clr-background: grey;
  --clr-textwhite: white;
 }
 
@@ -88,10 +88,9 @@ nav li a:hover:before {
 /*----------------*/
 
 .inloggen {
-  background-image: url(./images/logofestflirt.png);
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url(./images/Background-festflirt.png);
+  background-size: cover;
+  background-position: 0em -4em;
 }
 
 .inloggen>section:nth-of-type(1) {
