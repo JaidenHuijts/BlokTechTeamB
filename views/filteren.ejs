@@ -5,7 +5,7 @@
     <title>Filteren Matching Application</title>
 </head>
 
-<body>
+<body class="filteren">
 
     <section class="filteren-page">
         <%- include('./partials/nav.ejs'); %> 
@@ -14,5 +14,66 @@
             <p>Deze view is gerendered uit /routes/filteren.js</p>
         
     </section>
+
+
+
+    <form action="/resultatenlijst" method="POST">
+
+        <!-- Geslacht -->
+        
+        <fieldset>
+        <label id="koppen" for="geslacht">Kies een geslacht:</label>
+        
+           <label for="Geslacht">Man</label>
+            <input type="radio" name="geslacht" value="Man" id="man" required> 
+          
+            <label for="Geslacht">Vrouw</label>
+            <input type="radio" name="geslacht" value="Vrouw" id="vrouw" >
+         </fieldset>
+        
+         
+       <!-- Leeftijdscategorie -->
+        <fieldset>
+        <label id="koppen" for="leeftijd">Kies een leeftijdscategorie</label>
+        
+         
+           <label for="Leeftijd">18 tot 25 jaar</label>
+            <input type="radio" name="leeftijd" value="18 tot 30 jaar" id="Leeftijd" required>
+          
+             <label for="Leeftijd">25 tot 30 jaar</label>
+            <input type="radio" name="leeftijd" value="25 tot 30 jaar" id="Leeftijd">
+
+            <label for="Leeftijd">30 tot 50 jaar</label>
+            <input type="radio" name="leeftijd" value="30 tot 50 jaar" id="Leeftijd">
+          
+             <label for="Leeftijd">Boven de 50+</label>
+            <input type="radio" name="leeftijd" value="Boven de 50+" id="Leeftijd">
+         </fieldset>
+        
+        
+        <!-- Muziek genre -->
+        <fieldset>
+        <label id="koppen" for="muziekgenre">Kies een muziekgenre</label>
+        
+        
+           <label for="muziekgenre">HipHop</label>
+            <input type="checkbox" name="muziekgenre" value="HipHop" id="HipHop" required>
+           
+            <label for="muziekgenre">Techno</label>
+            <input type="checkbox" name="muziekgenre" value="Techno" id="Techno">
+
+            <label for="muziekgenre">Pop</label>
+            <input type="checkbox" name="muziekgenre" value="Pop" id="Pop">
+
+            <label for="muziekgenre">R&B</label>
+            <input type="checkbox" name="muziekgenre" value="R&B" id="R&B">
+
+            <label for="muziekgenre">Jazz</label>
+            <input type="checkbox" name="muziekgenre" value="Jazz" id="Jazz">
+
+      
+          
+           
+         </fieldset>
 
 </body>
