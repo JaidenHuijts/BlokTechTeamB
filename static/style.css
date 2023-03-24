@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'auxilia';
-  src: url('auxilia-bold-webfont.woff2') format('woff2'),
-       url('auxilia-bold-webfont.woff') format('woff');
-  font-weight: bold;
+  font-family: 'auxilia-black';
+  src: url('auxilia-black-webfont.woff2') format('woff2'),
+       url('auxilia-black-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'auxilia';
-  src: url('auxilia-black-webfont.woff2') format('woff2'),
-       url('auxilia-black-webfont.woff') format('woff');
-  font-weight: black;
+  font-family: 'auxilia-bold';
+  src: url('auxilia-bold-webfont.woff2') format('woff2'),
+       url('auxilia-bold-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -151,7 +151,8 @@ nav li a:hover:before {
 
 .matchen-page h1{
   padding: 2em;
-  font-family: 'auxilia';
+  font-family: 'auxilia-bold';
+  font-size: 3em;
 }
 
 .match-card-container{
