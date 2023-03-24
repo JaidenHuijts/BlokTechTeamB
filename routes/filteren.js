@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/filteren', (req, res) => {
-    res.render('registreren')
+router.get('/', (req, res) => {
+    res.render('./filteren')
 })
 
 module.exports =  router

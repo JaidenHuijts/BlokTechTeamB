@@ -1,11 +1,15 @@
 :root {
- --clr-backgroundblack: black;
+ --clr-background: grey;
  --clr-textwhite: white;
 }
 
 *, *::after, *::before {
   margin: 0;
   padding: 0;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*----------------*/
@@ -63,14 +67,19 @@ nav li a:before {
 }
 
 nav li a:after {
-  background: rgb(255, 55, 95);
+  background: rgb(255, 247, 14);
   right: 0;
 }
 
 nav li a:hover:before {
-  background: rgb(255, 55, 95);
+  background: rgb(255, 247, 14);
   width: 100%;
   transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+.wrapper img{
+  height: 50px;
+  width: auto;
 }
 
 
@@ -79,7 +88,9 @@ nav li a:hover:before {
 /*----------------*/
 
 .inloggen {
-  background-color: black;
+  background-image: url(./images/Background-festflirt.png);
+  background-size: cover;
+  background-position: 0em -4em;
 }
 
 .inloggen>section:nth-of-type(1) {
@@ -113,7 +124,3 @@ nav li a:hover:before {
 /*---------*/
 /* Matchen */
 /*---------*/
-
-.matchen-page h1{
-  color: white;
-}
