@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'auxilia-black';
-  src: url('auxilia-black-webfont.woff2') format('woff2'),
-       url('auxilia-black-webfont.woff') format('woff');
+  src: url('../static/fonts/auxilia-black-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-black-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'auxilia-bold';
-  src: url('auxilia-bold-webfont.woff2') format('woff2'),
-       url('auxilia-bold-webfont.woff') format('woff');
+  src: url('../static/fonts/auxilia-bold-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'auxilia';
-  src: url('auxilia-webfont.woff2') format('woff2'),
-       url('auxilia-webfont.woff') format('woff');
+  src: url('../static/fonts/auxilia-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
