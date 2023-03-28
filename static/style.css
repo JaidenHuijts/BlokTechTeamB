@@ -257,7 +257,7 @@ nav li a:hover:before {
   margin-top: 1em;
   margin-bottom: 3em;
 
-  font-family: var(--font-auxilia-bold);
+  font-family: 'auxilia';
 
 }
 
@@ -351,6 +351,15 @@ nav li a:hover:before {
   border-bottom: 1px solid white;
   width: 20vw;
 }
+
+/* eye button styling */
+
+.registreren>section:nth-of-type(1)>form>label>img {
+  width: 1.2em;
+  height: auto;
+  color: white;
+}
+
 
 
 /* style submit button*/
