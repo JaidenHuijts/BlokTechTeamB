@@ -25,6 +25,9 @@
 :root {
  --clr-background: grey;
  --clr-textwhite: white;
+ --font-auxilia-bold: 'auxilia-bold';
+ --font-auxilia-black: 'auxilia-black';
+ --font-auxilia: 'auxilia';
 }
 
 *, *::after, *::before {
@@ -229,9 +232,12 @@ nav li a:hover:before {
   height: 100vh;
 }
 
+
+/* the register box */
+
 .registreren>section:nth-of-type(1) {
   width: 70%;
-  height: 37em;
+  height: 45em;
   background-color: rgb(30, 30, 30, 0.8);
   border: 2px solid rgb(255, 247, 14);
   border-radius: 25px;
@@ -239,17 +245,139 @@ nav li a:hover:before {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+
 
 }
+
+/* register now text */
 
 .registreren>section:nth-of-type(1)>h1 {
 
   color: yellow;
   margin-top: 1em;
-  margin-bottom: auto;
+  margin-bottom: 3em;
+
+  font-family: 'auxilia';
 
 }
+
+
+/* all form styling */
+
+
+.registreren>section:nth-of-type(1)>form {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+}
+
+
+
+/* put Name above input field */
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(1),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(2),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(3),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(4),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(5),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(6),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(7),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(8) {
+  display: flex;
+  flex-direction: column;
+
+  color: yellow;
+  font-family: var(--font-auxilia);
+  font-size: 1.2em;
+
+  gap: 0.5em;
+}
+
+
+
+/* align input field together */
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(1),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(3),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(5),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(7) {
+  margin-left: 20%;
+}
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(2),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(4),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(6),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(8) {
+  margin-left: 10em;
+}
+
+
+
+
+/* style all input fields */
+.registreren>section:nth-of-type(1)>form>label>input {
+
+  border: none;
+  border-bottom: 1px solid white;
+  color: var(--clr-textwhite);
+  background-color: transparent;
+  width: 20vw;
+
+  font-size: 1em;
+}
+
+
+
+
+
+/* style gender selection input */
+.registreren>section:nth-of-type(1)>form>label>select {
+
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 20vw;
+}
+.registreren>section:nth-of-type(1)>form>label>select>option {
+
+  background-color: #232423;
+  color: var(--clr-textwhite);
+  border: none;
+  border-bottom: 1px solid white;
+  width: 20vw;
+}
+
+/* eye button styling */
+
+.registreren>section:nth-of-type(1)>form>label>img {
+  width: 1.2em;
+  height: auto;
+  color: white;
+}
+
+
+
+/* style submit button*/
+
+.registreren>section:nth-of-type(1)>form>input {
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
+  justify-self: center;
+  padding: 1em;
+  height: 3.5em;
+  width: 15em;
+
+  color: black;
+  border-radius: 10em;
+  border: none;
+  background-color: yellow;
+}
+
 
 
 
