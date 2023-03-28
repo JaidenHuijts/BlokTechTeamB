@@ -122,6 +122,27 @@ nav li a:hover:before {
 
 
 
+.filteren form {
+ margin-left: 5em;
+ margin-right: 5em;
+ border: solid 5px rgb(255, 247, 14) ;
+ border-radius: 12px;
+ background-color:  rgb(30, 30, 30);
+ color: white;
+ box-shadow: 5px 10px 8px #888888;;
+}
+
+.filteren fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#koppen {
+  font-size: 18pt;
+  color: rgb(255, 247, 14);
+}
+
 /*---------*/
 /* Matchen */
 /*---------*/
