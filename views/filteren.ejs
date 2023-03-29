@@ -9,45 +9,48 @@
 
     <section class="filteren-page">
         <%- include('./partials/nav.ejs'); %> 
-
-        <h1>Jaiden</h1>
-            <p>Deze view is gerendered uit /routes/filteren.js</p>
-        
+    
     </section>
 
 
-
+<main class="filtermain">
     <form action="/resultatenlijst" method="POST">
 
         <!-- Geslacht -->
         
         <fieldset>
         <label id="koppen" for="geslacht">Kies een geslacht:</label>
-        
+        <div>
+        <input type="radio" name="geslacht" value="Man" id="man" required>
            <label for="Geslacht">Man</label>
-            <input type="radio" name="geslacht" value="Man" id="man" required> 
-          
+           
+            
+           <input type="radio" name="geslacht" value="Vrouw" id="vrouw" >
             <label for="Geslacht">Vrouw</label>
-            <input type="radio" name="geslacht" value="Vrouw" id="vrouw" >
+        </div>
+
          </fieldset>
         
          
        <!-- Leeftijdscategorie -->
         <fieldset>
         <label id="koppen" for="leeftijd">Kies een leeftijdscategorie</label>
-        
-         
+        <div>
+        <input type="radio" name="leeftijd" value="18 tot 30 jaar" id="Leeftijd" required>
            <label for="Leeftijd">18 tot 25 jaar</label>
-            <input type="radio" name="leeftijd" value="18 tot 30 jaar" id="Leeftijd" required>
-          
+     
+           <input type="radio" name="leeftijd" value="25 tot 30 jaar" id="Leeftijd">
              <label for="Leeftijd">25 tot 30 jaar</label>
-            <input type="radio" name="leeftijd" value="25 tot 30 jaar" id="Leeftijd">
-
-            <label for="Leeftijd">30 tot 50 jaar</label>
-            <input type="radio" name="leeftijd" value="30 tot 50 jaar" id="Leeftijd">
+             
           
-             <label for="Leeftijd">Boven de 50+</label>
+             <input type="radio" name="leeftijd" value="30 tot 50 jaar" id="Leeftijd">
+            <label for="Leeftijd">30 tot 50 jaar</label>
+            
             <input type="radio" name="leeftijd" value="Boven de 50+" id="Leeftijd">
+             <label for="Leeftijd">Boven de 50+</label>
+        </div>
+            
+           
          </fieldset>
         
         
@@ -55,25 +58,35 @@
         <fieldset>
         <label id="koppen" for="muziekgenre">Kies een muziekgenre</label>
         
-        
+        <div>
+        <input type="checkbox" name="muziekgenre" value="HipHop" id="HipHop" required>
            <label for="muziekgenre">HipHop</label>
-            <input type="checkbox" name="muziekgenre" value="HipHop" id="HipHop" required>
+
            
-            <label for="muziekgenre">Techno</label>
-            <input type="checkbox" name="muziekgenre" value="Techno" id="Techno">
+           <input type="checkbox" name="muziekgenre" value="Techno" id="Techno">
+            <label for="muziekgenre">Techno </label>
 
-            <label for="muziekgenre">Pop</label>
+           
             <input type="checkbox" name="muziekgenre" value="Pop" id="Pop">
-
-            <label for="muziekgenre">R&B</label>
+            <label for="muziekgenre">Pop </label>
+           
+            
             <input type="checkbox" name="muziekgenre" value="R&B" id="R&B">
-
-            <label for="muziekgenre">Jazz</label>
+            <label for="muziekgenre">R&B</label>
+          
+          
             <input type="checkbox" name="muziekgenre" value="Jazz" id="Jazz">
+            <label for="muziekgenre">Jazz</label>
+        </div>
+    
 
       
           
            
          </fieldset>
+
+         <input type="submit" name="filteren" value="Bevestigen" id="submitbutton">
+
+        </main>
 
 </body>
