@@ -39,6 +39,10 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 659eb2b209d188c1197649656fc8d000acbe8050
 body{
   font-family: 'auxilia';
 }
@@ -391,6 +395,8 @@ nav li a:hover:before {
 /*---------------------*/
 /* Festivals toevoegen */
 /*---------------------*/
+
+
 .festivallike {
   background-image: url(./images/Background-festflirt2.png);
   background-size: cover;

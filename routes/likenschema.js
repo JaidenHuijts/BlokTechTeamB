@@ -9,6 +9,6 @@ imgHeartEmpty:String,
 imgHeartFull:String,
 });
 
-const Festivals =  mongoose.model('Festivals', likeSchema, "Liken");
+const Festivals =  mongoose.model('Festivals', likeFestivalSchema, "Liken");
 
 module.exports = {Festivals};
