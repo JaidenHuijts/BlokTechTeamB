@@ -27,7 +27,6 @@
  --clr-textwhite: white;
  --clr-border: rgb(255, 247, 14);
  --clr-bgrnav: rgb(30, 30, 30);
- --clr-bglighter: rgb(30, 30, 30, 0.8);
  --font-auxilia-bold: 'auxilia-bold';
  --font-auxilia-black: 'auxilia-black';
  --font-auxilia: 'auxilia';
@@ -137,8 +136,8 @@ nav li a:hover:before {
 .inloggen>section:nth-of-type(1) {
   width: 40%;
   height: 37em;
-  background-color: var(--clr-bglighter);
-  border: 2px solid var(--clr-border);
+  background-color: rgb(30, 30, 30, 0.8);
+  border: 2px solid rgb(255, 247, 14);
   border-radius: 25px;
 
   display: flex;
@@ -146,11 +145,11 @@ nav li a:hover:before {
   flex-direction: column;
   justify-content: flex-end;
 
-}
+} 
 
 .inloggen>section:nth-of-type(1)>h1 {
 
-  color: var(--clr-border);
+  color: yellow;
   margin-top: 1em;
   margin-bottom: auto;
 
@@ -172,7 +171,7 @@ nav li a:hover:before {
 
   display: flex;
   flex-direction: column;
-  color: var(--clr-border);
+  color: yellow;
   gap: 0.5em;
 
 }
@@ -202,7 +201,7 @@ nav li a:hover:before {
  margin: 6em 0 2em 0;
  padding: 1em;
  border-radius: 25px;
- background-color: var(--clr-border);
+ background-color: yellow;
  border: none;
  font-weight: bold;
 
@@ -215,7 +214,7 @@ nav li a:hover:before {
 }
 
 .inloggen>section:nth-of-type(1)>p>a {
-  color: var(--clr-border);
+  color: yellow;
   font-weight: bold;
 
 }
@@ -246,8 +245,8 @@ nav li a:hover:before {
 .registreren>section:nth-of-type(1) {
   width: 70%;
   height: 45em;
-  background-color: var(--clr-bglighter);
-  border: 2px solid var(--clr-border);
+  background-color: rgb(30, 30, 30, 0.8);
+  border: 2px solid rgb(255, 247, 14);
   border-radius: 25px;
 
   display: flex;
@@ -261,7 +260,7 @@ nav li a:hover:before {
 
 .registreren>section:nth-of-type(1)>h1 {
 
-  color: var(--clr-border);
+  color: yellow;
   margin-top: 1em;
   margin-bottom: 3em;
 
@@ -298,7 +297,7 @@ nav li a:hover:before {
   display: flex;
   flex-direction: column;
 
-  color: var(--clr-border);
+  color: yellow;
   font-family: var(--font-auxilia);
   font-size: 1.2em;
 
@@ -383,7 +382,7 @@ nav li a:hover:before {
   color: black;
   border-radius: 10em;
   border: none;
-  background-color: var(--clr-border);
+  background-color: yellow;
 }
 
 
@@ -606,23 +605,74 @@ input[type="checkbox"]:not(:checked)+ label {
 /* Matchen */
 /*---------*/
 
+.matchen-page{
+  background-color: #eee;
+}
+
 .matchen-page h1{
-  padding: 2em;
-  font-family: 'auxilia-bold';
+  padding: 1em;
+  font-family: var(--font-auxilia-bold);
   font-size: 2.5em;
 }
 
 .match-card-container{
+  height: 70vh;
   display: flex;
   justify-content: center;
+  padding: 2em 4em;
+  position: relative;
 }
 
 .match-card{
-  border: 1px solid black;
-  padding: 1em;
-  width: 300px;
-  height: 500px;
+  background-color: white;
+  position: absolute;
   display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+  border: 5px solid rgb(255, 247, 14);
+  border-radius: 10px;
+}
+
+.match-card .image-container {
+  width: 110%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.match-card .image-container img {
+  width: 100%;
+  height: auto;
+  margin-top: -5em;
+}
+
+.profile-metadata{
+  padding: 1em;
+}
+
+.profile-metadata h2{
+  font-family: var(--font-auxilia-bold);
+  margin-bottom: .5em;
+}
+
+.profile-metadata p {
+  margin-bottom: .5em;
+  font-size: 1.3em;
+}
+
+.profile-metadata p:nth-child(3),
+.profile-metadata p:nth-child(5),
+.profile-metadata p:nth-child(7){
+  font-family: var(--font-auxilia-bold);
+}
+
+.dislike-button{
+  float: left;
+  margin-right: 55em;
+  align-self: center;
+  background: none;
+  border: none;
 }
 
 .button-container{
@@ -634,13 +684,6 @@ input[type="checkbox"]:not(:checked)+ label {
   width: 70px;
   height: auto;
   cursor: pointer;
-}
-
-.dislike-button{
-  float: left;
-  align-self: center;
-  background: none;
-  border: none;
 }
 
 .like-button{
