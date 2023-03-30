@@ -1,9 +1,35 @@
+@font-face {
+  font-family: 'auxilia-black';
+  src: url('../static/fonts/auxilia-black-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'auxilia-bold';
+  src: url('../static/fonts/auxilia-bold-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'auxilia';
+  src: url('../static/fonts/auxilia-webfont.woff2') format('woff2'),
+       url('../static/fonts/auxilia-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
  --clr-background: grey;
  --clr-textwhite: white;
  --clr-border: rgb(255, 247, 14);
  --clr-bgrnav: rgb(30, 30, 30);
- --clr-border: rgb(255, 247, 14)
+ --font-auxilia-bold: 'auxilia-bold';
+ --font-auxilia-black: 'auxilia-black';
+ --font-auxilia: 'auxilia';
 }
 
 *, *::after, *::before {
@@ -12,7 +38,7 @@
 }
 
 body{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'auxilia';
 }
 
 /*----------------*/
@@ -44,7 +70,7 @@ nav li a {
   color: white;
   display: block;
   font-size: 1em;
-  font-weight: bold;
+  font-family: 'auxilia-bold';
   height: 30px;
   letter-spacing: 1px;
   margin: 0 14px;
@@ -94,19 +120,269 @@ nav li a:hover:before {
   background-image: url(./images/Background-festflirt.png);
   background-size: cover;
   background-position: 0em -4em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
 }
 
-/* .inloggen>section:nth-of-type(1) {
 
-} */
+.inloggen>section:nth-of-type(1) {
+  width: 40%;
+  height: 37em;
+  background-color: rgb(30, 30, 30, 0.8);
+  border: 2px solid rgb(255, 247, 14);
+  border-radius: 25px;
 
-.inloggen h1 {
-  color: var(--clr-textwhite);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
 }
+
+.inloggen>section:nth-of-type(1)>h1 {
+
+  color: yellow;
+  margin-top: 1em;
+  margin-bottom: auto;
+
+}
+
+.inloggen>section:nth-of-type(1)>form {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+
+  width: 50%;
+
+}
+
+
+.inloggen>section:nth-of-type(1)>form>label {
+
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+  gap: 0.5em;
+
+}
+
+
+.inloggen>section:nth-of-type(1)>form>label:nth-of-type(1) {
+  margin-bottom: 2.5em;
+}
+
+.inloggen>section:nth-of-type(1)>form>label>input#username,
+.inloggen>section:nth-of-type(1)>form>label>input#password{
+
+  border: none;
+  border-top: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  padding-top: 0.2em ;
+
+  color: white;
+  font-size: 1.2em;
+ 
+ 
+}
+
+.inloggen>section:nth-of-type(1)>form>input[type=submit] {
+
+ margin: 6em 0 2em 0;
+ padding: 1em;
+ border-radius: 25px;
+ background-color: yellow;
+ border: none;
+ font-weight: bold;
+
+}
+
+.inloggen>section:nth-of-type(1)>p {
+  color: white;
+  margin-bottom: 2em;;
+
+}
+
+.inloggen>section:nth-of-type(1)>p>a {
+  color: yellow;
+  font-weight: bold;
+
+}
+
+
+
+
 
 /*-------------*/
 /* Registreren */
 /*-------------*/
+
+.registreren {
+  background-image: url(./images/Background-festflirt.png);
+  background-size: cover;
+  background-position: 0em -4em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+
+/* the register box */
+
+.registreren>section:nth-of-type(1) {
+  width: 70%;
+  height: 45em;
+  background-color: rgb(30, 30, 30, 0.8);
+  border: 2px solid rgb(255, 247, 14);
+  border-radius: 25px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+/* register now text */
+
+.registreren>section:nth-of-type(1)>h1 {
+
+  color: yellow;
+  margin-top: 1em;
+  margin-bottom: 3em;
+
+  font-family: 'auxilia';
+
+}
+
+
+/* all form styling */
+
+
+.registreren>section:nth-of-type(1)>form {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+}
+
+
+
+/* put Name above input field */
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(1),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(2),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(3),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(4),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(5),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(6),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(7),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(8) {
+  display: flex;
+  flex-direction: column;
+
+  color: yellow;
+  font-family: var(--font-auxilia);
+  font-size: 1.2em;
+
+  gap: 0.5em;
+}
+
+
+
+/* align input field together */
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(1),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(3),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(5),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(7) {
+  margin-left: 20%;
+}
+
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(2),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(4),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(6),
+.registreren>section:nth-of-type(1)>form>label:nth-of-type(8) {
+  margin-left: 10em;
+}
+
+
+
+
+/* style all input fields */
+.registreren>section:nth-of-type(1)>form>label>input {
+
+  border: none;
+  border-bottom: 1px solid white;
+  color: var(--clr-textwhite);
+  background-color: transparent;
+  width: 20vw;
+
+  font-size: 1em;
+}
+
+
+
+
+
+/* style gender selection input */
+.registreren>section:nth-of-type(1)>form>label>select {
+
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 20vw;
+}
+.registreren>section:nth-of-type(1)>form>label>select>option {
+
+  background-color: #232423;
+  color: var(--clr-textwhite);
+  border: none;
+  border-bottom: 1px solid white;
+  width: 20vw;
+}
+
+/* eye button styling */
+
+.registreren>section:nth-of-type(1)>form>label>img {
+  width: 1.2em;
+  height: auto;
+  color: white;
+}
+
+
+
+/* style submit button*/
+
+.registreren>section:nth-of-type(1)>form>input {
+  grid-column: 1 / 3;
+  grid-row: 5 / 6;
+  justify-self: center;
+  padding: 1em;
+  height: 3.5em;
+  width: 15em;
+
+  color: black;
+  border-radius: 10em;
+  border: none;
+  background-color: yellow;
+}
+
+
+
 
 
 /*---------------------*/
@@ -205,3 +481,54 @@ nav li a:hover:before {
 /*---------*/
 /* Matchen */
 /*---------*/
+
+.matchen-page h1{
+  padding: 2em;
+  font-family: 'auxilia-bold';
+  font-size: 2.5em;
+}
+
+.match-card-container{
+  display: flex;
+  justify-content: center;
+}
+
+.match-card{
+  border: 1px solid black;
+  padding: 1em;
+  width: 300px;
+  height: 500px;
+  display: flex;
+}
+
+.button-container{
+  align-self: center;
+  margin: 10em;
+}
+
+.button-container img{
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+}
+
+.dislike-button{
+  float: left;
+  align-self: center;
+  background: none;
+  border: none;
+}
+
+.like-button{
+  float: right;
+  align-self: center;
+  background: none;
+  border: none;
+}
+
+.dislike-button:hover,
+.like-button:hover{
+  transform: scale(1.1);
+  transition: 1s;
+}
+
