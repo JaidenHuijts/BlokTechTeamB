@@ -12,7 +12,69 @@
 </head>
 
 
-<body class="inloggen">
+<body class="registreren">
+
+  <section>
+    <h1>
+      Registreer nu!
+    </h1>
+
+    <form name="registreerform" method="POST" action="/:user/Profile">
+
+
+      <label for="username">
+        Gebruikersnaam
+        <input type="text" id="username" name="username" />
+      </label>
+
+      <label for="email">
+        E-mail
+        <input type="email" id="E-mail" name="E-mail" />
+      </label>
+
+      <label for="firstname">
+        Voornaam
+        <input type="text" id="firstname" name="firstname" />
+      </label>
+
+      <label for="gender">
+        Gender
+        <select id="gender" name="gender">
+          <option value="man">Man</option>
+          <option value="vrouw">Vrouw</option>
+          <option value="anders">Anders</option>
+        </select>
+      </label>
+
+      <label for="lastname">
+        Achternaam
+        <input type="text" id="lastname" name="lastname" />
+      </label>
+
+      <label for="password">
+        Wachtwoord
+        <input type="password" id="password" name="password" />
+      </label>
+
+      <label for="geboortedatum">
+        Geboortedatum
+        <input type="date" id="geboortedatum" name="geboortedatum" />
+      </label>
+
+      <label for="herwachtwoord">
+        Herhaal Wachtwoord
+        <input type="password" id="repassword" name="repassword" />
+
+      </label>
+
+
+      
+      <input type="submit" value="Registreer Nu!" />
+
+    </form>
+
+
+  </section>
 
 
 
