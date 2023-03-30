@@ -1,6 +1,7 @@
 const express = require('express')
 let ejs = require('ejs')
 require('dotenv').config()
+const {connectDB} = require('./db/index');
 
 const port = 1337
 const app = express()
@@ -9,6 +10,8 @@ router.set('view engine', 'ejs')
 
 app.use(express.static('static'))
 app.use(express.urlencoded({ extended: true }))
+
+connectDB();
 
 const inlogRoute = require('./routes/inloggen');
 const registrerenRouter = require('./routes/registreren');
@@ -19,20 +22,20 @@ const matchenRouter = require('./routes/matchen');
 
 // Connect Mongoose 
 
-const mongoose = require('mongoose');
-const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
+// const mongoose = require('mongoose');
+// const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`;
 
 app.set('view engine', 'ejs')
 
-async function main() {
-  await mongoose.connect(uri,{
-    dbName: process.env.DATABASE_NAME,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  console.log("Succesfully connected")
-}
-main().catch(err => console.log(err));
+// async function main() {
+//   await mongoose.connect(uri,{
+//     dbName: process.env.DATABASE_NAME,
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   });
+//   console.log("Succesfully connected")
+// }
+// main().catch(err => console.log(err));
 
 // Routing
 

@@ -1,12 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const {Festivals} = require('./likenschema')
+const {LikeFestivalSchema} = require('../routes/likenschema');
 
-// router.get('/', (req, res) => {
-//     res.render('./liken.ejs')
-// })
-
-router.get('/', async (req, res) => {
+router.get('/liken', async (req, res) => {
     try {
         const getFestivals = await Festivals.find();
         res.render('Liken', {name: 'Find Festivals', potentialFestivals, filteren})
@@ -14,8 +10,8 @@ router.get('/', async (req, res) => {
     } catch (error) {
         console.error(error)
     }
-    
-    });
+});
+
 
 
 // app.post('/likepagina',  async (req, res) => {  
