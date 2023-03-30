@@ -10,8 +10,31 @@
     <section class="matchen-page">
         <%- include('./partials/nav.ejs'); %> 
 
-        <h1>Ronan Doeleman</h1>
-            <p>Deze view is gerendered uit /routes/matchen.js</p>
+        <h1>Zoek jouw perfecte match!</h1>
+
+        <div class="match-card-container">
+            <form action="/matches/match" method="post" class="button-container">
+                <button class="dislike-button" type="submit" value="" name="matchButtonDislike" >
+                    <img src="/images/close.png" alt="dislike button" />
+                </button>
+            </form>
+            <div class="match-card" >
+                <div class="profile-metadata">
+                    <img src="/static/images/logofestflirt.png"></img>
+                    <h2>Naam</h2>
+                    <p>Locatie, 28</p>
+                    <p>Bio</p>
+                    <p>Genres:</p>
+                    <p>Festivals:</p>
+                </div>
+            </div>
+            <form action="/matches/match" method="post" class="button-container">
+                <button class="like-button" type="submit" value="" name="matchButtonLike">
+                    <img src="/images/heart.png" alt="like"/>
+                </button>
+            </form>
+        </div>
+       
         
     </section>
 
