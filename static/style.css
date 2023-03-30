@@ -1,12 +1,9 @@
 :root {
  --clr-background: grey;
  --clr-textwhite: white;
-<<<<<<< Updated upstream
  --clr-border: rgb(255, 247, 14);
  --clr-bgrnav: rgb(30, 30, 30);
-=======
  --clr-border: rgb(255, 247, 14)
->>>>>>> Stashed changes
 }
 
 *, *::after, *::before {
@@ -97,19 +94,10 @@ nav li a:hover:before {
   background-image: url(./images/Background-festflirt.png);
   background-size: cover;
   background-position: 0em -4em;
-<<<<<<< Updated upstream
-=======
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  height: 100vh;
->>>>>>> Stashed changes
 }
 
 /* .inloggen>section:nth-of-type(1) {
 
-<<<<<<< Updated upstream
 } */
 
 .inloggen h1 {
@@ -119,110 +107,6 @@ nav li a:hover:before {
 /*-------------*/
 /* Registreren */
 /*-------------*/
-=======
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.inloggen>section:nth-of-type(1)>h1 {
-  color: yellow;
-  margin-top: 1em;
-  margin-bottom: auto;
-}
-
-.inloggen>section:nth-of-type(1)>form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1em;
-  width: 50%;
-}
-
-
-.inloggen>section:nth-of-type(1)>form>label {
-  display: flex;
-  flex-direction: column;
-  color: yellow;
-  gap: 0.5em;
-}
-
-
-.inloggen>section:nth-of-type(1)>form>label:nth-of-type(1) {
-  margin-bottom: 2.5em;
-}
-
-.inloggen>section:nth-of-type(1)>form>label>input#username,
-.inloggen>section:nth-of-type(1)>form>label>input#password{
-
-  border: none;
-  border-top: none;
-  border-bottom: 1px solid white;
-  background-color: transparent;
-  padding-top: 0.2em ;
-
-  color: white;
-  font-size: 1.2em;
-}
-
-.inloggen>section:nth-of-type(1)>form>input[type=submit] {
- margin: 6em 0 2em 0;
- padding: 1em;
- border-radius: 25px;
- background-color: yellow;
- border: none;
- font-weight: bold;
-}
-
-.inloggen>section:nth-of-type(1)>p {
-  color: white;
-  margin-bottom: 2em;;
-}
-
-.inloggen>section:nth-of-type(1)>p>a {
-  color: yellow;
-  font-weight: bold;
-}
-
-
-
-/*-------------*/
-/* Registreren */
-/*-------------*/
-.registreren {
-  background-image: url(./images/Background-festflirt.png);
-  background-size: cover;
-  background-position: 0em -4em;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  height: 100vh;
-}
-
-.registreren>section:nth-of-type(1) {
-  width: 70%;
-  height: 37em;
-  background-color: rgb(30, 30, 30, 0.8);
-  border: 2px solid rgb(255, 247, 14);
-  border-radius: 25px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.registreren>section:nth-of-type(1)>h1 {
-  color: yellow;
-  margin-top: 1em;
-  margin-bottom: auto;
-}
-
-
->>>>>>> Stashed changes
 
 
 /*---------------------*/
@@ -239,8 +123,6 @@ nav li a:hover:before {
   margin-left: 40em;
   margin-top: 1em;
 }
-<<<<<<< Updated upstream
-=======
 
 .festivallike section img:nth-of-type(1) {
   border: var(--clr-border) .1em solid;
@@ -280,79 +162,6 @@ nav li a:hover:before {
   position: absolute;
   width: 3em;
   margin-top: -8em;
-  margin-left: 15.5em;
-}
-
-.festivallike section:nth-of-type(2) button:nth-of-type(1) {
-  background-color: transparent;
-  border: none;
-}
-.festivallike section:nth-of-type(2) button:nth-of-type(2) {
-  background-color: transparent;
-  border: none;
-  margin-left: 24em;
-}
-.festivallike section:nth-of-type(2) button:nth-of-type(3) {
-  background-color: transparent;
-  border: none;
-  margin-left: 24.5em;
-}
-.festivallike section:nth-of-type(2) button:nth-of-type(4) {
-  background-color: transparent;
-  border: none;
-  margin-left: 24.5em;
-}
-
-.festivallike section:nth-of-type(3) a {
-  color: black;
-  font-family: 'auxilia-bold';
-  background-color: var(--clr-border); 
-  border-radius: 1em;
-  border: var(--clr-border) .1em solid;
-  margin-left: 38em;
-  text-decoration: none;
-  padding: .5em;
-}
->>>>>>> Stashed changes
-
-.festivallike section img:nth-of-type(1) {
-  border: var(--clr-border) .1em solid;
-  width: 20%;
-  margin-top: 4em;
-  margin-left: 5em;
-  margin-bottom: 2em;
-}
-
-.festivallike section img:nth-of-type(2) {
-  border: var(--clr-border) .1em solid;
-  width: 20%;
-  margin-top: 4em;
-  margin-left: 2em;
-  margin-bottom: 2em;
-}
-
-.festivallike section img:nth-of-type(3) {
-  border: var(--clr-border) .1em solid;
-  width: 20%;
-  margin-top: 4em;
-  margin-left: 2em;
-  margin-bottom: 2em;
-}
-
-.festivallike section img:nth-of-type(4) {
-  border: var(--clr-border) .1em solid;
-  width: 20%;
-  margin-top: 4em;
-  margin-left: 2em;
-  margin-bottom: 2em;
-}
-
-.festivallike section:nth-of-type(2) button img {
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  width: 3em;
-  margin-top: -6em;
   margin-left: 15.5em;
 }
 

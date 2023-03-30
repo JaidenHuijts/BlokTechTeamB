@@ -1,24 +1,23 @@
 const express = require('express')
 const router = express.Router()
+const {Festivals} = require('./likenschema')
 
-router.get('/', (req, res) => {
-    res.render('./liken.ejs')
-})
-
-module.exports =  router
-
-//NODIG OM INFO UIT DATABASE TE HALEN!
-// app.get('/liken', async (req, res) => {
-//     // logic db call -> template aanroepen -> de data meegeven aan de template ||
-//     const collection = client.db ('MaeveInterior').collection('interior');
-//     const interiorList = await collection.find ({}).toArray();
-
-//     res.render("liken.ejs",  {interiorList});
+// router.get('/', (req, res) => {
+//     res.render('./liken.ejs')
 // })
 
+router.get('/', async (req, res) => {
+    try {
+        const getFestivals = await Festivals.find();
+        res.render('Liken', {name: 'Find Festivals', potentialFestivals, filteren})
+
+    } catch (error) {
+        console.error(error)
+    }
+    
+    });
 
 
-//OM TE KUNNEN ZIEN OF DIE LIKE TRUE OF FALSE IS
 // app.post('/likepagina',  async (req, res) => {  
 //     // console.log('@@-- REQ. body', req.body);
 
@@ -45,3 +44,5 @@ module.exports =  router
 //         console.log(e)
 //     }
 // });
+
+module.exports =  router
