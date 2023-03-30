@@ -195,14 +195,24 @@ display: none;
   display: none;
 }
 
-.filteren input[type="radio"]:checked + label {
+input[type="radio"]:checked + label {
   background-color: white;
   color: black;
 }
 
-.filteren input[type="checkbox"]:checked + label {
+input[type="checkbox"]:checked + label {
   background-color: white;
   color: black;
+}
+
+input[type="radio"]:not(:checked) + label {
+  background-color: black;
+  color: white;
+}
+
+input[type="checkbox"]:not(:checked)+ label {
+  background-color: black;
+  color: white;
 }
 
 #koppen {

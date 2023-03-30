@@ -7,14 +7,11 @@
 
 <body class="filteren">
 
-    <section class="filteren-page">
-        <%- include('./partials/nav.ejs'); %> 
-    
-    </section>
+   
 
 
 <main class="filtermain">
-    <form action="/resultatenlijst" method="POST">
+    <form action="/" method="POST">
 
         <!-- Geslacht -->
         
@@ -22,11 +19,11 @@
         <label id="koppen" for="geslacht">Kies een geslacht:</label>
         <div>
         <input type="radio" name="geslacht" value="Man" id="man" required>
-           <label for="Geslacht">Man</label>
-           
+           <label for="man">Man</label>
+         
             
            <input type="radio" name="geslacht" value="Vrouw" id="vrouw" >
-            <label for="Geslacht">Vrouw</label>
+            <label for="vrouw">Vrouw</label>
         </div>
 
          </fieldset>
@@ -36,18 +33,18 @@
         <fieldset>
         <label id="koppen" for="leeftijd">Kies een leeftijdscategorie</label>
         <div>
-        <input type="radio" name="leeftijd" value="18 tot 30 jaar" id="Leeftijd" required>
-           <label for="Leeftijd">18 tot 25 jaar</label>
+         <input type="radio" name="leeftijd" value="18" id="18" required>
+           <label for="18">18 tot 25 jaar</label>
      
-           <input type="radio" name="leeftijd" value="25 tot 30 jaar" id="Leeftijd">
-             <label for="Leeftijd">25 tot 30 jaar</label>
+           <input type="radio" name="leeftijd" value="25" id="25">
+             <label for="25">25 tot 30 jaar</label>
              
           
-             <input type="radio" name="leeftijd" value="30 tot 50 jaar" id="Leeftijd">
-            <label for="Leeftijd">30 tot 50 jaar</label>
+             <input type="radio" name="leeftijd" value="30" id="30">
+            <label for="30">30 tot 50 jaar</label>
             
-            <input type="radio" name="leeftijd" value="Boven de 50+" id="Leeftijd">
-             <label for="Leeftijd">Boven de 50+</label>
+            <input type="radio" name="leeftijd" value="50" id="50">
+             <label for="50">Boven de 50+</label>
         </div>
             
            
@@ -59,24 +56,24 @@
         <label id="koppen" for="muziekgenre">Kies een muziekgenre</label>
         
         <div>
-        <input type="checkbox" name="muziekgenre" value="HipHop" id="HipHop" required>
-           <label for="muziekgenre">HipHop</label>
+        <input type="checkbox" name="muziekgenre" value="HipHop" id="hiphop" required>
+           <label for="hiphop">HipHop</label>
 
            
-           <input type="checkbox" name="muziekgenre" value="Techno" id="Techno">
-            <label for="muziekgenre">Techno </label>
+           <input type="checkbox" name="muziekgenre" value="Techno" id="techno">
+            <label for="techno">Techno </label>
 
            
-            <input type="checkbox" name="muziekgenre" value="Pop" id="Pop">
-            <label for="muziekgenre">Pop </label>
+            <input type="checkbox" name="muziekgenre" value="Pop" id="pop">
+            <label for="pop">Pop </label>
            
             
-            <input type="checkbox" name="muziekgenre" value="R&B" id="R&B">
-            <label for="muziekgenre">R&B</label>
+            <input type="checkbox" name="muziekgenre" value="R&B" id="r&b">
+            <label for="r&b">R&B</label>
           
           
-            <input type="checkbox" name="muziekgenre" value="Jazz" id="Jazz">
-            <label for="muziekgenre">Jazz</label>
+            <input type="checkbox" name="muziekgenre" value="Jazz" id="jazz">
+            <label for="jazz">Jazz</label>
         </div>
     
 
