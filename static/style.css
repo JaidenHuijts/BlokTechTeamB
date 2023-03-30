@@ -468,7 +468,7 @@ nav li a:hover:before {
   border: var(--clr-border) .1em solid;
   margin-left: 38em;
   text-decoration: none;
-  padding: .6em;
+  padding: .5em;
   
 }
 
