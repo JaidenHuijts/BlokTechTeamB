@@ -8,8 +8,11 @@
         <img src="/images/logofestflirt.png">
     </header>
     <main>
+        <% allFestivals.forEach(festival => { %>
+            <p><%= festival.id %></p>
+            <img src="<%= festival.imgFestival %>">
+        <% }) %>
         <section>
-            <img src="<%= festival.imgFestival%>">
         </section>
         <section>
 
@@ -27,3 +30,4 @@
 
             <!-- <h1>Kyara</h1> -->
             <!-- <p>Deze view is gerendered uit /routes/liken.js</p> -->
+</body>
