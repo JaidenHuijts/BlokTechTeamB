@@ -32,10 +32,13 @@
  --font-auxilia: 'auxilia';
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
 }
+
 
 body{
   font-family: 'auxilia';
@@ -49,7 +52,7 @@ nav{
   background-color: var(--clr-bgrnav);
 }
 
-.wrapper img{
+.wrapper img {
   width: 120px;
   height: 50px;
   margin-top: .8em;
@@ -82,7 +85,8 @@ nav li a {
   -webkit-transition: all 0.5s ease;
 }
 
-nav li a:before, nav li a:after {
+nav li a:before,
+nav li a:after {
   content: '';
   position: absolute;
   width: 0%;
@@ -106,7 +110,7 @@ nav li a:hover:before {
   transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
 
-.wrapper img{
+.wrapper img {
   height: 50px;
   width: auto;
 }
@@ -388,6 +392,8 @@ nav li a:hover:before {
 /*---------------------*/
 /* Festivals toevoegen */
 /*---------------------*/
+
+
 .festivallike {
   background-image: url(./images/Background-festflirt2.png);
   background-size: cover;
@@ -475,8 +481,125 @@ nav li a:hover:before {
 /*----------*/
 /* Filteren */
 /*----------*/
+.filteren {
+  background-image: url("images/mainbackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: 100vh;
+}
+
+.filtermain {
+  display: flex;
+  justify-content: center;
+}
+
+.filteren form {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/logofestflirt.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5em;
+  margin-right: 5em;
+  border: solid 5px rgb(255, 247, 14);
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  box-shadow: 5px 10px 8px #000;
+  margin-top: 60px;
+  width: 500px;
+  padding-top: 30px;
+}
 
 
+.filteren fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  width: fit-content;
+  margin-left: 50px;
+  margin-right: 50px;
+ 
+}
+
+.filteren div {
+  display: flex;
+  flex-direction: row;
+}
+
+.filteren div label {
+  background-color: rgb(30, 30, 30);
+}
+
+.filteren label {
+  border: solid 2pt rgb(255, 247, 14);
+  margin: 5px;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+  color: rgb(255, 247, 14);
+
+}
+
+.filteren input[type="radio"] {
+display: none;
+}
+
+.filteren input[type="checkbox"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: white;
+  color: black;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: white;
+  color: black;
+}
+
+input[type="radio"]:not(:checked) + label {
+  background-color: black;
+  color: white;
+}
+
+input[type="checkbox"]:not(:checked)+ label {
+  background-color: black;
+  color: white;
+}
+
+#koppen {
+  font-size: 18pt;
+  color: white;
+  border: none;
+  margin: 0px;
+}
+
+
+#submitbutton {
+  color: black;
+  font-size: 10pt;
+  width: fit-content;
+  background-color: rgb(255, 247, 14) ;
+  border: solid 3pt rgb(255, 247, 14);
+  border-radius: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 190px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
 
 /*---------*/
 /* Matchen */
