@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const likenSchema = new mongoose.Schema({
+const festivalSchema = new mongoose.Schema({
     id: {
         type: String,
         required: true
@@ -19,6 +19,6 @@ const likenSchema = new mongoose.Schema({
     },
 })
 
-const Festivals = mongoose.model('Liken', likenSchema);
+const festivalModel = mongoose.model('festivals', festivalSchema);
 
-module.exports = { Festivals }
+module.exports = festivalModel;
