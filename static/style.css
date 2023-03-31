@@ -485,13 +485,22 @@ nav li a:hover:before {
 /* Filteren */
 /*----------*/
 .filteren {
-  background-image: url("images/mainbackground.png");
+  background-image:  url(./images/Background-festflirt2.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   background-position: center;
   height: 100vh;
 }
+.filteren header {
+ display: flex;
+ justify-content: center;
+}
+.filteren header img {
+  width: 10%;
+  margin-top: 1em;
+}
+
 
 .filtermain {
   display: flex;
@@ -548,6 +557,7 @@ nav li a:hover:before {
   padding: 5px;
   border-radius: 8px;
   color: rgb(255, 247, 14);
+  cursor: pointer;
 
 }
 
@@ -601,6 +611,7 @@ input[type="checkbox"]:not(:checked)+ label {
   margin-left: 190px;
   margin-top: 30px;
   margin-bottom: 30px;
+  cursor: pointer;
 
 }
 
@@ -700,5 +711,24 @@ input[type="checkbox"]:not(:checked)+ label {
 .like-button:hover{
   transform: scale(1.1);
   transition: 1s;
+}
+
+/*---------*/
+/* Error */
+/*---------*/
+
+ .error-page header img {
+   width: 10%;
+   margin-top: 1em;
+ }
+
+.error-page {
+  background-image: url(./images/Background-festflirt2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: 100vh;
+  color: rgb(255, 247, 14);
 }
 
