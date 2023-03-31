@@ -12,29 +12,34 @@
 
         <h1>Zoek jouw perfecte match!</h1>
 
+        <% getUsers.forEach(user => { %>        
+
         <div class="match-card-container">
-            <form action="/matches/match" method="post" class="button-container">
-                <button class="dislike-button" type="submit" value="" name="matchButtonDislike" >
-                    <img src="/images/close.png" alt="dislike button" />
-                </button>
-            </form>
-            <div class="match-card" >
+
+            <div class="match-card">
+                <div class="image-container">
+                    <img src="<%= user.image %>" alt="user profile photo"></img>
+                </div>
+
                 <div class="profile-metadata">
-                    <img src="/static/images/logofestflirt.png"></img>
-                    <h2>Naam</h2>
-                    <p>Locatie, 28</p>
-                    <p>Bio</p>
-                    <p>Genres:</p>
-                    <p>Festivals:</p>
+                    <h2><%= user.name %></h2>
+                    <p><%= user.location %>, <%= user.age %></p>
+                    <p>Bio:</p> <p> <%= user.bio %></p>
+                    <p>Genres:</p> <p> <%= user.favgenres %></p>
+                    <p>Festivals:</p> <p> <%= user.favfestivals %></p>
                 </div>
             </div>
-            <form action="/matches/match" method="post" class="button-container">
-                <button class="like-button" type="submit" value="" name="matchButtonLike">
+           <form action="/matchen/match" method="post" class="button-container">
+                <button class="dislike-button" type="submit" value="<%= user.id %>" name="matchButtonDislike" >
+                    <img src="/images/close.png" alt="dislike button" />
+                </button>
+                <button class="like-button" type="submit" value="<%= user.id %>" name="matchButtonLike">
                     <img src="/images/heart.png" alt="like"/>
+                    
                 </button>
             </form>
         </div>
-       
+        <% }) %>
         
     </section>
 
