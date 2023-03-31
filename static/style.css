@@ -148,7 +148,7 @@ nav li a:hover:before {
   flex-direction: column;
   justify-content: flex-end;
 
-}
+} 
 
 .inloggen>section:nth-of-type(1)>h1 {
 
@@ -608,23 +608,74 @@ input[type="checkbox"]:not(:checked)+ label {
 /* Matchen */
 /*---------*/
 
+.matchen-page{
+  background-color: #eee;
+}
+
 .matchen-page h1{
-  padding: 2em;
-  font-family: 'auxilia-bold';
+  padding: 1em;
+  font-family: var(--font-auxilia-bold);
   font-size: 2.5em;
 }
 
 .match-card-container{
+  height: 70vh;
   display: flex;
   justify-content: center;
+  padding: 2em 4em;
+  position: relative;
 }
 
 .match-card{
-  border: 1px solid black;
-  padding: 1em;
-  width: 300px;
-  height: 500px;
+  background-color: white;
+  position: absolute;
   display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+  border: 5px solid rgb(255, 247, 14);
+  border-radius: 10px;
+}
+
+.match-card .image-container {
+  width: 110%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.match-card .image-container img {
+  width: 100%;
+  height: auto;
+  margin-top: -5em;
+}
+
+.profile-metadata{
+  padding: 1em;
+}
+
+.profile-metadata h2{
+  font-family: var(--font-auxilia-bold);
+  margin-bottom: .5em;
+}
+
+.profile-metadata p {
+  margin-bottom: .5em;
+  font-size: 1.3em;
+}
+
+.profile-metadata p:nth-child(3),
+.profile-metadata p:nth-child(5),
+.profile-metadata p:nth-child(7){
+  font-family: var(--font-auxilia-bold);
+}
+
+.dislike-button{
+  float: left;
+  margin-right: 55em;
+  align-self: center;
+  background: none;
+  border: none;
 }
 
 .button-container{
@@ -636,13 +687,6 @@ input[type="checkbox"]:not(:checked)+ label {
   width: 70px;
   height: auto;
   cursor: pointer;
-}
-
-.dislike-button{
-  float: left;
-  align-self: center;
-  background: none;
-  border: none;
 }
 
 .like-button{
