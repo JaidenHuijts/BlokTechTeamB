@@ -1,22 +1,50 @@
 const express = require('express')
+const userModel = require('../db/models/registerSchema')
 const router = express.Router()
+
+router.use(express.static('static'))
+router.use(express.urlencoded({ extended: true }))
+
+
+console.log('kaas')
+
+
+router.post("/post-data", async (req, res) => {
+    console.log("running postroute");
+  
+    const username = req.body.username;
+    const email = req.body.email;
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    const gender = req.body.gender;
+    const password = req.body.password;
+    const birthdate = req.body.birthdate;
+  
+    const newUser = new userModel({
+      username: username,
+      email: email,
+      firstname: firstname,
+      lastname: lastname,
+      gender: gender,
+      password: password,
+      birthdate: birthdate
+    });
+  
+    console.log("dit is nieuwe data", newUser)
+    await newUser.save();
+  
+    console.log("Account aangemaakt voor", username);
+  
+    res.redirect("/");
+  });
 
 
 router.get('/', (req, res) => {
-    res.render('registreren')
+    res.render('registreren.ejs')
 })
 
+
 module.exports =  router
-
-
-
-
-
-
-
-
-
-
 
 
 

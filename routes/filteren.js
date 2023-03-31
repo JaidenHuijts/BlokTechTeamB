@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { Match } = require('./matchSchema')
+const matchModel = require('../db/models/matchSchema');
 router.get('/', (req, res) => {
     res.render('./filteren')
 })
