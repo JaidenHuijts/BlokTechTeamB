@@ -717,6 +717,11 @@ input[type="checkbox"]:not(:checked)+ label {
 /* Error */
 /*---------*/
 
+.error-page header {
+  display: flex;
+  justify-content: center;
+}
+
  .error-page header img {
    width: 10%;
    margin-top: 1em;
@@ -732,3 +737,34 @@ input[type="checkbox"]:not(:checked)+ label {
   color: rgb(255, 247, 14);
 }
 
+.error-page main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.error-page main h1 {
+  font-size: 35pt;
+  padding: 10px;
+}
+
+.error-page main p {
+  padding: 10px;
+  font-size: 20pt;
+}
+
+.error-page main a {
+ padding: 10px;
+}
+
+.error-page main section {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid 3pt rgb(255, 247, 14);
+  border-radius: 12px;
+}
+
+
+.error-page main a {
+  color: rgb(255, 247, 14);
+}
