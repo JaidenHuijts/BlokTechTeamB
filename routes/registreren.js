@@ -1,50 +1,33 @@
-const express = require('express')
-const userModel = require('../db/models/registerSchema')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+const UserModel = require('../db/models/userSchema');
 
-router.use(express.static('static'))
-router.use(express.urlencoded({ extended: true }))
-
-
-console.log('kaas')
-
-
-router.post("/post-data", async (req, res) => {
-    console.log("running postroute");
-  
-    const username = req.body.username;
-    const email = req.body.email;
-    const firstname = req.body.firstname;
-    const lastname = req.body.lastname;
-    const gender = req.body.gender;
-    const password = req.body.password;
-    const birthdate = req.body.birthdate;
-  
-    const newUser = new userModel({
-      username: username,
-      email: email,
-      firstname: firstname,
-      lastname: lastname,
-      gender: gender,
-      password: password,
-      birthdate: birthdate
-    });
-  
-    console.log("dit is nieuwe data", newUser)
-    await newUser.save();
-  
-    console.log("Account aangemaakt voor", username);
-  
-    res.redirect("/");
-  });
-
+// Make sure to use the body parser middleware for parsing request bodies
+router.use(express.urlencoded({ extended: true }));
 
 router.get('/', (req, res) => {
-    res.render('registreren.ejs')
-})
+  res.render('registreren');
+});
 
+router.post('/postdata', (req, res) => {
+  // Create a new user document from the request body
+  const newUser = new UserModel(req.body);
 
-module.exports =  router
+  // Save the user document to the database
+  newUser.save((err, savedUser) => {
+    if (err) {
+      // Bij error 
+      console.error(err);
+      res.status(500).json({ error: 'Failed to save user' });
+    } else {
+      // als t werkt doe dit
+      res.json(savedUser);
+      res.render("./inlog.ejs")
+    }
+  });
+});
+
+module.exports = router;
 
 
 
