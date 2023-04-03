@@ -39,7 +39,10 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 659eb2b209d188c1197649656fc8d000acbe8050
 body{
   font-family: 'auxilia';
 }
@@ -482,13 +485,22 @@ nav li a:hover:before {
 /* Filteren */
 /*----------*/
 .filteren {
-  background-image: url("images/mainbackground.png");
+  background-image:  url(./images/Background-festflirt2.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   background-position: center;
   height: 100vh;
 }
+.filteren header {
+ display: flex;
+ justify-content: center;
+}
+.filteren header img {
+  width: 10%;
+  margin-top: 1em;
+}
+
 
 .filtermain {
   display: flex;
@@ -545,6 +557,7 @@ nav li a:hover:before {
   padding: 5px;
   border-radius: 8px;
   color: rgb(255, 247, 14);
+  cursor: pointer;
 
 }
 
@@ -598,6 +611,7 @@ input[type="checkbox"]:not(:checked)+ label {
   margin-left: 190px;
   margin-top: 30px;
   margin-bottom: 30px;
+  cursor: pointer;
 
 }
 
@@ -700,3 +714,58 @@ input[type="checkbox"]:not(:checked)+ label {
   transition: 1s;
 }
 
+/*---------*/
+/* Error */
+/*---------*/
+
+.error-page header {
+  display: flex;
+  justify-content: center;
+}
+
+ .error-page header img {
+   width: 10%;
+   margin-top: 1em;
+ }
+
+.error-page {
+  background-image: url(./images/Background-festflirt2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  height: 100vh;
+  color: rgb(255, 247, 14);
+}
+
+.error-page main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.error-page main h1 {
+  font-size: 35pt;
+  padding: 10px;
+}
+
+.error-page main p {
+  padding: 10px;
+  font-size: 20pt;
+}
+
+.error-page main a {
+ padding: 10px;
+}
+
+.error-page main section {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid 3pt rgb(255, 247, 14);
+  border-radius: 12px;
+}
+
+
+.error-page main a {
+  color: rgb(255, 247, 14);
+}
