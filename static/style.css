@@ -619,7 +619,7 @@ input[type="checkbox"]:not(:checked)+ label {
   height: 70vh;
   display: flex;
   justify-content: center;
-  padding: 2em 4em;
+  padding: 0em 4em;
   position: relative;
 }
 
@@ -669,7 +669,7 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .dislike-button{
   float: left;
-  margin-right: 55em;
+  margin-right: 45em;
   align-self: center;
   background: none;
   border: none;
@@ -677,6 +677,7 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .button-container{
   align-self: center;
+  display: flex;
   margin: 10em;
 }
 
