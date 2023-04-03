@@ -23,7 +23,7 @@ router.post('./matchen', async (req, res) => {
   console.log('@@-- data', match);
 
 
-  res.render('/.filteren', {
+  res.render('./matchen', {
     data: match
 
 
