@@ -649,8 +649,8 @@ input[type="checkbox"]:not(:checked)+ label {
   background-color: transparent;
   border: none;
   width: 3em;
-  margin-top: 25em;
-  margin-left: -30em;
+  margin-top: 18em;
+  margin-left: -26em;
 }
 
 .profile-festivals {
