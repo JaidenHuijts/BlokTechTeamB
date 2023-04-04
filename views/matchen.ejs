@@ -2,40 +2,53 @@
 
 <head>
     <link rel="stylesheet" type="text/css"   href="./style.css">
-    <title>Filteren Matching Application</title>
+    <title>Matchen Matching Application</title>
 </head>
 
 <body>
-
+    <%- include('./partials/nav.ejs'); %> 
+    
     <section class="matchen-page">
-        <%- include('./partials/nav.ejs'); %> 
+
+        <% if(profile) { %> 
 
         <h1>Zoek jouw perfecte match!</h1>
 
-        <div class="match-card-container">
-            <form action="/matches/match" method="post" class="button-container">
-                <button class="dislike-button" type="submit" value="" name="matchButtonDislike" >
-                    <img src="/images/close.png" alt="dislike button" />
-                </button>
-            </form>
-            <div class="match-card" >
-                <div class="profile-metadata">
-                    <img src="/static/images/logofestflirt.png"></img>
-                    <h2>Naam</h2>
-                    <p>Locatie, 28</p>
-                    <p>Bio</p>
-                    <p>Genres:</p>
-                    <p>Festivals:</p>
+        <% if (potentialMatches && potentialMatches.length > 0) { %>
+        <% potentialMatches.forEach(match => { %>   
+        <div class="potential-match">
+
+            <div class="match-card">
+                <div class="image-container">
+                    <img src="<%= match.image %>" alt="user profile photo"></img>
                 </div>
+
+                <div class="profile-metadata">
+                    <h2><%= match.name %></h2>
+                    <p><%= match.location %>, <%= match.age %></p>
+                    <p>Bio:</p> <p> <%= match.bio %></p>
+                    <p>Genres:</p> <p> <%= match.favgenres %></p>
+                    <p>Festivals:</p> <p> <%= match.favfestivals %></p>
+                </div>
+                <form action="/matchen/match" method="post" class="button-container">
+                    <button class="dislike-button" type="submit" value="<%= match.id %>" name="matchButtonDislike" >
+                        <img src="/images/close.png" alt="dislike button" />
+                    </button>
+                    <button class="like-button" type="submit" value="<%= match.id %>" name="matchButtonLike">
+                        <img src="/images/heart.png" alt="like"/>
+                        
+                    </button>
+                </form>
             </div>
-            <form action="/matches/match" method="post" class="button-container">
-                <button class="like-button" type="submit" value="" name="matchButtonLike">
-                    <img src="/images/heart.png" alt="like"/>
-                </button>
-            </form>
-        </div>
-       
-        
+           
+            <% }) %>
+            <% } else { %>
+
+            <h3>Er zijn op dit moment geen nieuwe matches gevonden...</h3>
+            <% } %>
+
+    </div>        
+    <%} %> 
     </section>
 
 </body>
