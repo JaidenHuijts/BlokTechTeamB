@@ -17,6 +17,11 @@ const festivalSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+
+    liked: {
+        type: Boolean,
+        require: false
+    }
 })
 
 const festivalModel = mongoose.model('festivals', festivalSchema);

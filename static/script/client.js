@@ -5,13 +5,14 @@ formulieren.forEach(formulier => {
 
     formulier.addEventListener('submit', event => {
         event.preventDefault();
-        console.log('hoi')
+    
         const formData = new FormData(formulier);
+        
         const data = new URLSearchParams();
         data.set('itemid', formData.get('itemid'));
         
         // Met fetch haal je data uit de database/api
-        fetch('/',
+        fetch('/liken',
             {
                 method: "POST",
                 body: data,
@@ -22,10 +23,10 @@ formulieren.forEach(formulier => {
         // Vervolg vanuit de fetch, wat ik erna nog mee wilt doen
         ).then(() => {
             const img = event.target.querySelector('button img');
-            console.log(img.classList.contains);
+            console.log(img.classList.contains('hartjevol'));
             
             // Als geen actie, haalt die img class op van 'hartjevol' uit hbs (unlike)
-            if(img.classList.contains) {
+            if(img.classList.contains('hartjevol')) {
                 img.src = '/images/EmptywhiteHeart.png';
             // Zo niet? Haalt die de overige img class op van 'hartjeleeg' uit hbs (like)
             } else {
