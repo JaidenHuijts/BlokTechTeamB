@@ -391,6 +391,8 @@ nav li a:hover:before {
 /*---------------------*/
 /* Festivals toevoegen */
 /*---------------------*/
+
+
 .festivallike {
   background-image: url(./images/Background-festflirt2.png);
   background-size: cover;
@@ -595,16 +597,20 @@ input[type="checkbox"]:not(:checked)+ label {
 /*---------*/
 
 .profile-page{
+  background-image: url(./images/Background-festflirt2.png);
+  background-size: cover;
+  background-position: 0em -4em;
   padding: 2em;
 }
 
 .profile-page h1{
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .profile-page h1,
 .profile-page h2{
   font-family: 'auxilia-bold';
+  color: white;
 }
 
 .my-profile{
@@ -626,6 +632,35 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .my-profile-metadata p{
   font-size: 1.2em;
+  color: white;
+}
+
+.festival-images{
+  border: var(--clr-border) .1em solid;
+  width:18%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.profile-festivals button img {
+  background-color: transparent;
+  border: none;
+  width: 3em;
+  margin-top: 25em;
+  margin-left: -30em;
+}
+
+.profile-festivals {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+}
+
+.heart-buttons{
+  background: none;
+  border: none;
+  width: 100px;
+  height: auto;
 }
 
 .my-profile-metadata h2{
@@ -675,7 +710,9 @@ article{
 /*---------*/
 
 .matchen-page{
-  background-color: #eee;
+  background-image: url(./images/Background-festflirt2.png);
+  background-size: cover;
+  background-position: 0em -4em;
   height: 90vh;
   padding: 2em;
 }
@@ -688,6 +725,7 @@ article{
 .matchen-page h1{
   font-family: var(--font-auxilia-bold);
   font-size: 2.5em;
+  color: white;
 }
 
 .potential-match  {
@@ -721,40 +759,28 @@ article{
   margin-top: -7em;
 }
 
-.overzichtProfiel  {
-  background-image: url(./images/Background-festflirt2.png);
-  background-size: cover;
-  background-position: 0em -4em;
-}
-
-.overzichtProfiel header img {
-  width: 10%;
-  margin-left: 40em;
-  margin-top: 1em;
-}
-
-.overzichtProfiel .profile-metadata{
+.profile-metadata{
   padding: .5em 1em;
 }
 
-.overzichtProfiel .profile-metadata h2{
+.profile-metadata h2{
   font-family: var(--font-auxilia-bold);
   margin-bottom: .5em;
 }
 
-.overzichtProfiel .profile-metadata p {
+.profile-metadata p {
   margin-bottom: .5em;
   font-size: 1.3em;
 }
 
-.overzichtProfiel .profile-metadata p:nth-child(3),
-.overzichtProfiel .profile-metadata p:nth-child(5),
-.overzichtProfiel .profile-metadata p:nth-child(7){
+.profile-metadata p:nth-child(3),
+.profile-metadata p:nth-child(5),
+.profile-metadata p:nth-child(7){
   font-family: var(--font-auxilia-bold);
 }
 
-.overzichtProfiel .match-card .like-button,
-.overzichtProfiel .match-card .dislike-button {
+.match-card .like-button,
+.match-card .dislike-button {
   width: 55px;
   height: 55px;
   overflow: hidden;
@@ -764,63 +790,23 @@ article{
   background: none;
 }
 
-.overzichtProfiel .match-card .like-button img,
-.overzichtProfiel .match-card .dislike-button  img{
+.match-card .like-button img,
+.match-card .dislike-button  img{
   width: 100%;
   height: auto;
 }
 
-.overzichtProfiel .dislike-button:hover,
-.overzichtProfiel .like-button:hover{
+.dislike-button:hover,
+.like-button:hover{
   transform: scale(1.1);
   transition: 1s;
 }
-
-
-/*----------------*/
-/* Profiel pagina */
-/*----------------*/
-
-.profiel  {
-  background-image: url(./images/Background-festflirt2.png);
-  background-size: cover;
-  background-position: 0em -4em;
-}
-
-.profiel header img {
-  width: 10%;
-  margin-left: 40em;
-  margin-top: 1em;
-}
-
-/* .profiel main {
 
 .button-container{
   display: flex;
   justify-content: center;
   gap: 4em;
   margin-top: -1em;
-} */
-
-.profiel section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/logofestflirt.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 5em;
-  margin-right: 5em;
-  border: solid 5px rgb(255, 247, 14);
-  border-radius: 12px;
-  background-color: black;
-  color: white;
-  box-shadow: 5px 10px 8px #000;
-  margin-top: 60px;
-  width: 500px;
-  padding-top: 30px;
 }
 
 /*---------*/
