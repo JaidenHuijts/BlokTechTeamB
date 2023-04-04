@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registreer</title>
   <link href="./style.css" rel="stylesheet" type="text/css">
-  <script src="index.js"></script>
+  <script src="/routes/registreren.js"></script>
 
 </head>
 
@@ -19,7 +19,7 @@
       Registreer nu!
     </h1>
 
-    <form name="registreerform" method="POST" action="/:user/Profile">
+    <form name="registreerform" method="POST" action="/registreren/profile">
 
 
       <label for="username">
@@ -29,7 +29,7 @@
 
       <label for="email">
         E-mail
-        <input type="email" id="E-mail" name="E-mail" />
+        <input type="email" id="email" name="email" />
       </label>
 
       <label for="firstname">
@@ -56,9 +56,9 @@
         <input type="password" id="password" name="password" />
       </label>
 
-      <label for="geboortedatum">
+      <label for="birthdate">
         Geboortedatum
-        <input type="date" id="geboortedatum" name="geboortedatum" />
+        <input type="date" id="birthdate" name="birthdate" />
       </label>
 
       <label for="herwachtwoord">

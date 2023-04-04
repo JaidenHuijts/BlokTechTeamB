@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+console.log("password", process.env.DB_USERNAME)
 
 const connectDB  = async function() {
     try {
-       await mongoose.connect(`mongodb+srv://projecttechteamb:ajax2002@matchingdb.r5sleuk.mongodb.net/?retryWrites=true&w=majority`);       
+       await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.PASSWORD}${process.env.DATABASE_URI}`);       
        console.log('DB connected');
        return;
     } catch (error) {
@@ -11,4 +12,4 @@ const connectDB  = async function() {
     }
 }
 
-module.exports = {connectDB}
+module.exports = { connectDB }

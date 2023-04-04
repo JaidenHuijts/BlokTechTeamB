@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" type="text/css"   href="./style.css">
+    <title>Profile Matching Application</title>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs'); %> 
+
+    <section class="profile-page">
+        <% if (profile) { %>
+        <h1>Hi <%= profile.name %>,</h1>
+
+        <section class="my-profile">
+
+            <img src=<%= profile.image %> alt ="profile-image">
+
+            <div class="my-profile-metadata">
+                <p><%= profile.location %>, <%= profile.age %></p>
+                <p>Bio:" <%= profile.bio %>"</p>
+                <p>Genres: <%= profile.favgenres.join(", ") %></p>
+            </div>
+        </section>
+        <% } %>
+
+        <% if (matches) { %>
+        <h2>Mijn matches:</h2>
+        <Section class="my-matches-container">
+            <% matches.forEach(match => { %>
+            <Article>
+                <img src=<%= match.image %> alt=<%= match.name %>/>
+                <h3><%= match.name %></h3>
+                <form action="/profile/removeFromMatches" method="post" class="button-container-profile">
+                    <button name="removeMatchButton" type="submit" value="<%= match.id %>" >Delete</button>
+                </form>
+            </Article>
+            <% }) %>
+        </Section>
+        <% } %>
+    </section>
+
+</body>

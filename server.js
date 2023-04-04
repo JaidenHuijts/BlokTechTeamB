@@ -17,6 +17,7 @@ const inlogRoute = require('./routes/inloggen');
 const registrerenRouter = require('./routes/registreren');
 const filterenRouter = require('./routes/filteren');
 const likenRouter = require('./routes/liken');
+const profileRouter = require('./routes/profile');
 const matchenRouter = require('./routes/matchen');
 const profielRouter = require('./routes/profiel');
 // const { database }  = require('./routes/dataschema');
@@ -40,9 +41,6 @@ app.set('view engine', 'ejs')
 
 // Routing
 
-
-
-
 app.use('/registreren', registrerenRouter)
 
 app.use('/', inlogRoute)
@@ -50,6 +48,8 @@ app.use('/', inlogRoute)
 app.use('/filteren', filterenRouter)
 
 app.use('/liken', likenRouter)
+
+app.use('/profile', profileRouter)
 
 app.use('/matchen', matchenRouter)
 
