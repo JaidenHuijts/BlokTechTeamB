@@ -612,34 +612,119 @@ input[type="checkbox"]:not(:checked)+ label {
 }
 
 /*---------*/
+/* Profile */
+/*---------*/
+
+.profile-page{
+  padding: 2em;
+}
+
+.profile-page h1{
+  font-size: 2em;
+}
+
+.profile-page h1,
+.profile-page h2{
+  font-family: 'auxilia-bold';
+}
+
+.my-profile{
+  display: flex;
+  margin-bottom: 4em;
+  margin-top: 2em;
+}
+
+.my-profile img{
+  height: 18em;
+  width: 18em;
+  border-radius: 50%;
+}
+
+.my-profile-metadata{
+  align-self: flex-end;
+  margin-left: 1em;
+}
+
+.my-profile-metadata p{
+  font-size: 1.2em;
+}
+
+.my-profile-metadata h2{
+  margin-top: 0;
+}
+
+.my-matches-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.my-matches-container h3{
+  font-size: 1.5em;
+}
+
+article{
+  padding: 1em;
+  max-width: 100%;
+}
+
+.my-matches-container button{
+  background-color: yellow;
+  font-family: 'auxilia';
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2em;
+  line-height: 1em;
+  padding: .5em 2em;
+  cursor: pointer;
+}
+
+.my-matches-container button:hover{
+  color: red;
+  transition: .7s;
+  cursor: pointer;
+}
+
+.my-matches-container img{
+  border-radius: 8px;
+  width: 12.5em;
+  height: 15em;
+}
+
+/*---------*/
 /* Matchen */
 /*---------*/
 
 .matchen-page{
   background-color: #eee;
+  height: 90vh;
+  padding: 2em;
+}
+
+.matchen-page h3{
+  text-align: center;
+  margin-top: 10em;
 }
 
 .matchen-page h1{
-  padding: 1em;
   font-family: var(--font-auxilia-bold);
   font-size: 2.5em;
 }
 
-.match-card-container{
-  height: 70vh;
+.potential-match  {
   display: flex;
   justify-content: center;
-  padding: 0em 4em;
   position: relative;
-}
+} 
 
 .match-card{
   background-color: white;
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 600px;
+  height: 40em;
+  width: 25em;
+  margin-top: 2em;
   overflow: hidden;
   border: 5px solid rgb(255, 247, 14);
   border-radius: 10px;
@@ -647,18 +732,18 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .match-card .image-container {
   width: 110%;
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
 }
 
 .match-card .image-container img {
   width: 100%;
   height: auto;
-  margin-top: -5em;
+  margin-top: -7em;
 }
 
 .profile-metadata{
-  padding: 1em;
+  padding: .5em 1em;
 }
 
 .profile-metadata h2{
@@ -677,37 +762,34 @@ input[type="checkbox"]:not(:checked)+ label {
   font-family: var(--font-auxilia-bold);
 }
 
-.dislike-button{
-  float: left;
-  margin-right: 45em;
-  align-self: center;
-  background: none;
+.match-card .like-button,
+.match-card .dislike-button {
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
   border: none;
-}
-
-.button-container{
-  align-self: center;
-  display: flex;
-  margin: 10em;
-}
-
-.button-container img{
-  width: 70px;
-  height: auto;
+  margin: 1em 0 2em 0;
   cursor: pointer;
+  background: none;
 }
 
-.like-button{
-  float: right;
-  align-self: center;
-  background: none;
-  border: none;
+.match-card .like-button img,
+.match-card .dislike-button  img{
+  width: 100%;
+  height: auto;
 }
 
 .dislike-button:hover,
 .like-button:hover{
   transform: scale(1.1);
   transition: 1s;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+  margin-top: -1em;
 }
 
 /*---------*/
