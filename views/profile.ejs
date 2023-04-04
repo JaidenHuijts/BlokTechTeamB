@@ -5,11 +5,9 @@
     <title>Profile Matching Application</title>
 </head>
 
-<body class="overzichtProfiel">
-    <!-- <%- include('./partials/nav.ejs'); %>  -->
-    <header>
-        <img src="/images/logofestflirt.png">
-    </header>
+<body>
+    <%- include('./partials/nav.ejs'); %> 
+
     <section class="profile-page">
         <% if (profile) { %>
         <h1>Hi <%= profile.name %>,</h1>
@@ -26,6 +24,19 @@
         </section>
         <% } %>
 
+    <section class="profile-festivals">
+        <% getInformation.forEach(festival => { %>
+            <img class="festival-images" src="<%= festival.imgFestival %>">
+                <form  action="/liken" method="POST">
+                    <input type="hidden" name="itemid" value="<%= festival._id %>">
+                        <% if (festival.liked) { %>
+                            <button class="heart-buttons"><img class="hartjevol" src="/images/FullRedHeart.png" alt="like"></button>
+                        <% } else { %>
+                            <button class="heart-buttons"><img class="hartjeleeg" src="/images/EmptywhiteHeart.png" alt="unlike"></button> 
+                        <% } %>
+                </form>
+        <% }) %>
+    </section>
         <% if (matches) { %>
         <h2>Mijn matches:</h2>
         <Section class="my-matches-container">
