@@ -678,6 +678,7 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .my-matches-container h3{
   font-size: 1.5em;
+  color: white;
 }
 
 article{
@@ -704,9 +705,9 @@ article{
 }
 
 .my-matches-container img{
-  border-radius: 8px;
   width: 12.5em;
   height: 15em;
+  border: var(--clr-border) 1px solid;
 }
 
 /*---------*/
@@ -745,9 +746,9 @@ article{
   flex-direction: column;
   height: 40em;
   width: 25em;
-  margin-top: 2em;
+  margin-top: 4em;
   overflow: hidden;
-  border: 5px solid rgb(255, 247, 14);
+  border: var(--clr-border) 3px solid;
   border-radius: 10px;
 }
 
