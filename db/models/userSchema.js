@@ -22,11 +22,11 @@ const UserSchema = new Schema({
         type: String,
         required: [true, "Lastname is required"]
     },
-    Gender: {
+    gender: {
         type: String,
         required: [true, "Gender is required"]
     },
-    Birthdate: {
+    birthdate: {
         type: Date,
         required: [true, "Birthdate is required"]
     }

@@ -6,30 +6,27 @@ const UserModel = require('../db/models/userSchema');
 router.use(express.urlencoded({ extended: true }));
 
 router.get('/', (req, res) => {
-  res.render('registreren');
+  res.render('./registreren.ejs');
 });
 
-router.post('/postdata', (req, res) => {
-  // Create a new user document from the request body
-  const newUser = new UserModel(req.body);
+router.post('/profile', async (req, res) => {
+  try {
+    // Create a new user document from the request body
+    const newUser = new UserModel(req.body);
+    console.log("start profile route", newUser)
 
-  // Save the user document to the database
-  newUser.save((err, savedUser) => {
-    if (err) {
-      // Bij error 
-      console.error(err);
-      res.status(500).json({ error: 'Failed to save user' });
-    } else {
-      // als t werkt doe dit
-      res.json(savedUser);
-      res.render("./inlog.ejs")
-    }
-  });
+    // Save the user document to the database
+    const savedUser = await newUser.save();
+    console.log("end profile route")
+    res.redirect('/profile')
+  } catch (err) {
+    // Handle any errors that occurred during the save operation
+    console.error(err);
+    res.status(500).json({ error: 'Failed to save user' });
+  }
 });
 
 module.exports = router;
-
-
 
 
 
