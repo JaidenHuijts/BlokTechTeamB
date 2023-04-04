@@ -5,9 +5,11 @@
     <title>Profile Matching Application</title>
 </head>
 
-<body>
-    <%- include('./partials/nav.ejs'); %> 
-
+<body class="overzichtProfiel">
+    <!-- <%- include('./partials/nav.ejs'); %>  -->
+    <header>
+        <img src="/images/logofestflirt.png">
+    </header>
     <section class="profile-page">
         <% if (profile) { %>
         <h1>Hi <%= profile.name %>,</h1>
