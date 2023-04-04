@@ -721,28 +721,40 @@ article{
   margin-top: -7em;
 }
 
-.profile-metadata{
+.overzichtProfiel  {
+  background-image: url(./images/Background-festflirt2.png);
+  background-size: cover;
+  background-position: 0em -4em;
+}
+
+.overzichtProfiel header img {
+  width: 10%;
+  margin-left: 40em;
+  margin-top: 1em;
+}
+
+.overzichtProfiel .profile-metadata{
   padding: .5em 1em;
 }
 
-.profile-metadata h2{
+.overzichtProfiel .profile-metadata h2{
   font-family: var(--font-auxilia-bold);
   margin-bottom: .5em;
 }
 
-.profile-metadata p {
+.overzichtProfiel .profile-metadata p {
   margin-bottom: .5em;
   font-size: 1.3em;
 }
 
-.profile-metadata p:nth-child(3),
-.profile-metadata p:nth-child(5),
-.profile-metadata p:nth-child(7){
+.overzichtProfiel .profile-metadata p:nth-child(3),
+.overzichtProfiel .profile-metadata p:nth-child(5),
+.overzichtProfiel .profile-metadata p:nth-child(7){
   font-family: var(--font-auxilia-bold);
 }
 
-.match-card .like-button,
-.match-card .dislike-button {
+.overzichtProfiel .match-card .like-button,
+.overzichtProfiel .match-card .dislike-button {
   width: 55px;
   height: 55px;
   overflow: hidden;
@@ -752,14 +764,14 @@ article{
   background: none;
 }
 
-.match-card .like-button img,
-.match-card .dislike-button  img{
+.overzichtProfiel .match-card .like-button img,
+.overzichtProfiel .match-card .dislike-button  img{
   width: 100%;
   height: auto;
 }
 
-.dislike-button:hover,
-.like-button:hover{
+.overzichtProfiel .dislike-button:hover,
+.overzichtProfiel .like-button:hover{
   transform: scale(1.1);
   transition: 1s;
 }
@@ -781,12 +793,14 @@ article{
   margin-top: 1em;
 }
 
+/* .profiel main {
+
 .button-container{
   display: flex;
   justify-content: center;
   gap: 4em;
   margin-top: -1em;
-}
+} */
 
 .profiel section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/logofestflirt.png");
