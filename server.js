@@ -19,7 +19,6 @@ const filterenRouter = require('./routes/filteren');
 const likenRouter = require('./routes/liken');
 const profileRouter = require('./routes/profile');
 const matchenRouter = require('./routes/matchen');
-const profielRouter = require('./routes/profiel');
 // const { database }  = require('./routes/dataschema');
 
 // Connect Mongoose 
@@ -52,8 +51,6 @@ app.use('/liken', likenRouter)
 app.use('/profile', profileRouter)
 
 app.use('/matchen', matchenRouter)
-
-app.use('/profiel', profielRouter)
 
 //404 send
 
