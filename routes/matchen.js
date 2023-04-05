@@ -5,7 +5,8 @@ const profileModel = require('../db/models/profileSchema');
 const authId = 99;
 
 
-router.get('/', async (req, res) => {
+
+router.post('/filteren', async (req, res) => {
 
     try {
         const getMatches = await matchModel.find();
@@ -24,6 +25,9 @@ router.get('/', async (req, res) => {
 
 // Met een button kan de gebruiker matches toevoegen aan zijn profiel of verwijderen.
 // 
+
+
+
 
 router.post('/match', async (req, res) => {
     const matchButtonLike = req.body.matchButtonLike;
