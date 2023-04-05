@@ -3,6 +3,7 @@ const router = express.Router()
 const profileModel = require('../db/models/profileSchema');
 const matchModel = require('../db/models/matchSchema');
 const festivalModel = require('../db/models/festivalsSchema');
+const userModel = require('../db/models/userSchema');
 
 // Moet vervangen worden door een echt id van de gebruiker die ingelogd is
 // zodra de login functionaliteit werkt.
@@ -15,6 +16,9 @@ const authId = 99;
 router.get('/', async (req, res) => {
     try {
       const getMatches = await matchModel.find();
+      const registerData = await userModel.find();
+
+      console.log("registerdata", registerData[0]);
 
       const profile = await profileModel.findOne({id: authId});
       // Check in alle users of hun id overeenkomt met de gebruikers matches id's, 
@@ -23,7 +27,7 @@ router.get('/', async (req, res) => {
 
       const getInformation = await festivalModel.find({liked: true});
       console.log("dit is insipiratie", getInformation)
-      res.render('profile', {profile, matches, getInformation})
+      res.render('profile', {profile, matches, getInformation, registerData})
     } catch (error) {
       console.error(error)
     }
