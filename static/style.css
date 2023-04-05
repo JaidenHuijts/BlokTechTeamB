@@ -695,7 +695,7 @@ input[type="checkbox"]:not(:checked)+ label {
 .heart-buttons{
   background: none;
   border: none;
-  width: 100px;
+  width: 6.5em;
   height: auto;
 }
 
@@ -723,7 +723,7 @@ article{
   font-family: 'auxilia';
   border: none;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 2%;
   font-size: 1.2em;
   line-height: 1em;
   padding: .5em 2em;
@@ -750,7 +750,7 @@ article{
   background-image: url(./images/Background-festflirt2.png);
   background-size: cover;
   background-position: 0em -4em;
-  height: 90vh;
+  height: 100vh;
   padding: 2em;
 }
 
@@ -781,12 +781,11 @@ article{
   margin-top: 4em;
   overflow: hidden;
   border: var(--clr-border) 3px solid;
-  border-radius: 10px;
+  border-radius: 1%;
 }
 
 .match-card .image-container {
   width: 110%;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -818,8 +817,8 @@ article{
 
 .match-card .like-button,
 .match-card .dislike-button {
-  width: 55px;
-  height: 55px;
+  width: 4em;
+  height: 4em;
   overflow: hidden;
   border: none;
   margin: 1em 0 2em 0;
