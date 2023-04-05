@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const matchModel = require('../db/models/matchSchema');
+const profileModel = require('../db/models/profileSchema');
+const authId = 99;
 
 
 router.get('/', (req, res) => {
@@ -40,13 +42,15 @@ router.post('/matchen', async (req, res) => {
     //   ageGroup = "18";
     // }
 
-    const potentialMatches = await matchModel.find({
+    const filteredMatches = await matchModel.find({
     gender: req.body.geslacht,
     age: req.body.leeftijd,
     favgenres: req.body.muziekgenre,
   });
 
-  console.log(potentialMatches);
+    const profile = await profileModel.findOne({id: authId})
+    const seenMatches = profile.matches.concat(profile.dislikes);
+    const potentialMatches = filteredMatches.filter(user => !seenMatches?.includes(user.id))
 
   res.render('./matchen', {potentialMatches});
   } catch (err) {

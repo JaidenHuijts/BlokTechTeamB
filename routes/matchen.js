@@ -9,12 +9,8 @@ router.post('/filteren', async (req, res) => {
     try {
         const getMatches = await matchModel.find();
         const profile = await profileModel.findOne({id: authId})
-        // Voeg twee arrays samen
-        const seenMatches = profile.matches.concat(profile.dislikes);
-         // Check of de user id's niet de id's van de matches en dislikes bevatten (seenMatches)
-        const potentialMatches = getMatches.filter(user => !seenMatches?.includes(user.id))
     
-        res.render('matchen', {potentialMatches, profile})
+        res.render('matchen', {potentialMatches: getMatches, profile})
 
       } catch (error) {
         console.error(error)
@@ -22,7 +18,6 @@ router.post('/filteren', async (req, res) => {
 });
 
 // Met een button kan de gebruiker matches toevoegen aan zijn profiel of verwijderen.
-// 
 
 router.post('/match', async (req, res) => {
     const matchButtonLike = req.body.matchButtonLike;
