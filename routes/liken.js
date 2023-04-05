@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     try{
         const getInformation = await festivalModel.find({});
         //console.log(getInformation)
-        
         res.render('./liken', {getInformation});
     } catch (error) {
         console.error(error)
@@ -27,9 +26,9 @@ router.post('/',  async (req, res) => {
         
         // als inspiratie beeld geliked, unlike anders like
         if (inspiratieBeeld.liked) {
-            const update = await festivalModel.findOneAndUpdate(filter, {$set: {liked: false}});
+             await festivalModel.findOneAndUpdate(filter, {$set: {liked: false}});
         } else {
-            const update = await festivalModel.findOneAndUpdate(filter, {$set: {liked: true}});
+             await festivalModel.findOneAndUpdate(filter, {$set: {liked: true}});
         }
         // redirect naar overzicht pagina
         res.redirect('/liken');

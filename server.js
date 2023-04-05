@@ -1,5 +1,5 @@
 const express = require('express')
-let ejs = require('ejs')
+
 require('dotenv').config()
 const {connectDB} = require('./db/index');
 
