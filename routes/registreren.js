@@ -22,7 +22,7 @@ router.post('/liken', async (req, res) => {
   } catch (err) {
     // Handle any errors that occurred during the save operation
     console.error(err);
-    res.status(500).json({ error: 'Failed to save user' });
+    res.redirect('/registreren')
   }
 });
 
