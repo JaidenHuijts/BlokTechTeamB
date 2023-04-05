@@ -617,26 +617,58 @@ input[type="checkbox"]:not(:checked)+ label {
   margin-bottom: 3em;
 }
 
-.my-profile{
+.profile-page p{
+  color: var(--clr-textwhite);
+  font-size: 1.5em;
+
+  font-family: var(--font-auxilia);
+}
+
+.profile-page a {
   display: flex;
+  text-decoration: none;
+  padding: 1em;
+  margin-bottom: 2em;
+
+  font-family: var(--font-auxilia-bold);
+
+  width: fit-content;
+  text-align: center;
+
+
+
+  color: black;
+  border-radius: 10em;
+  border: none;
+  background-color: yellow;
+}
+
+
+.my-profile{
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
+
+  height: 30%;
+
+  align-items: center;
   margin-bottom: 4em;
   margin-top: 2em;
 }
 
 .my-profile img{
-  height: 18em;
-  width: 18em;
+  width: 100%;
   border-radius: 50%;
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .my-profile-metadata{
   align-self: flex-end;
   margin-left: 1em;
-}
-
-.my-profile-metadata p{
-  font-size: 1.2em;
-  color: white;
+  margin-bottom: 1em;
 }
 
 .festival-images{
