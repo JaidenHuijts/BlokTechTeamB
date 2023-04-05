@@ -4,8 +4,6 @@ const matchModel = require('../db/models/matchSchema');
 const profileModel = require('../db/models/profileSchema');
 const authId = 99;
 
-
-
 router.post('/filteren', async (req, res) => {
 
     try {
@@ -25,9 +23,6 @@ router.post('/filteren', async (req, res) => {
 
 // Met een button kan de gebruiker matches toevoegen aan zijn profiel of verwijderen.
 // 
-
-
-
 
 router.post('/match', async (req, res) => {
     const matchButtonLike = req.body.matchButtonLike;
