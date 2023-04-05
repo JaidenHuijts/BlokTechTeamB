@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.render('./registreren.ejs');
 });
 
-router.post('/profile', async (req, res) => {
+router.post('/liken', async (req, res) => {
   try {
     // Create a new user document from the request body
     const newUser = new UserModel(req.body);
@@ -18,11 +18,11 @@ router.post('/profile', async (req, res) => {
     // Save the user document to the database
     const savedUser = await newUser.save();
     console.log("end profile route")
-    res.redirect('/profile')
+    res.redirect('/liken')
   } catch (err) {
     // Handle any errors that occurred during the save operation
     console.error(err);
-    res.status(500).json({ error: 'Failed to save user' });
+    res.redirect('/registreren')
   }
 });
 

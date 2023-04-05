@@ -555,26 +555,58 @@ input[type="checkbox"]:not(:checked)+ label {
   margin-bottom: 3em;
 }
 
-.my-profile{
+.profile-page p{
+  color: var(--clr-textwhite);
+  font-size: 1.5em;
+
+  font-family: var(--font-auxilia);
+}
+
+.profile-page a {
   display: flex;
+  text-decoration: none;
+  padding: 1em;
+  margin-bottom: 2em;
+
+  font-family: var(--font-auxilia-bold);
+
+  width: fit-content;
+  text-align: center;
+
+
+
+  color: black;
+  border-radius: 10em;
+  border: none;
+  background-color: yellow;
+}
+
+
+.my-profile{
+  display: grid;
+  grid-template-columns: 0.4fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
+
+  height: 30%;
+
+  align-items: center;
   margin-bottom: 4em;
   margin-top: 2em;
 }
 
 .my-profile img{
-  height: 18em;
-  width: 18em;
+  width: 100%;
   border-radius: 50%;
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .my-profile-metadata{
   align-self: flex-end;
   margin-left: 1em;
-}
-
-.my-profile-metadata p{
-  font-size: 1.2em;
-  color: white;
+  margin-bottom: 1em;
 }
 
 .festival-images{
@@ -601,7 +633,7 @@ input[type="checkbox"]:not(:checked)+ label {
 .heart-buttons{
   background: none;
   border: none;
-  width: 100px;
+  width: 6.5em;
   height: auto;
 }
 
@@ -616,6 +648,7 @@ input[type="checkbox"]:not(:checked)+ label {
 
 .my-matches-container h3{
   font-size: 1.5em;
+  color: white;
 }
 
 article{
@@ -628,7 +661,7 @@ article{
   font-family: 'auxilia';
   border: none;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 2%;
   font-size: 1.2em;
   line-height: 1em;
   padding: .5em 2em;
@@ -642,9 +675,9 @@ article{
 }
 
 .my-matches-container img{
-  border-radius: 8px;
   width: 12.5em;
   height: 15em;
+  border: var(--clr-border) 1px solid;
 }
 
 /*---------*/
@@ -655,7 +688,7 @@ article{
   background-image: url(./images/Background-festflirt2.png);
   background-size: cover;
   background-position: 0em -4em;
-  height: 90vh;
+  height: 100vh;
   padding: 2em;
 }
 
@@ -683,15 +716,14 @@ article{
   flex-direction: column;
   height: 40em;
   width: 25em;
-  margin-top: 2em;
+  margin-top: 4em;
   overflow: hidden;
-  border: 5px solid rgb(255, 247, 14);
-  border-radius: 10px;
+  border: var(--clr-border) 3px solid;
+  border-radius: 1%;
 }
 
 .match-card .image-container {
   width: 110%;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -723,8 +755,8 @@ article{
 
 .match-card .like-button,
 .match-card .dislike-button {
-  width: 55px;
-  height: 55px;
+  width: 4em;
+  height: 4em;
   overflow: hidden;
   border: none;
   margin: 1em 0 2em 0;

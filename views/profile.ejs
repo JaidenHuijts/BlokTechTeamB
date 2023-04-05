@@ -10,17 +10,34 @@
 
     <section class="profile-page">
         <% if (profile) { %>
-        <h1>Hi <%= profile.name %>,</h1>
+        <h1>Hi <%= registerData[0].username %>,</h1>
 
         <section class="my-profile">
 
             <img src=<%= profile.image %> alt ="profile-image">
 
-            <div class="my-profile-metadata">
-                <p><%= profile.location %>, <%= profile.age %></p>
-                <p>Bio:" <%= profile.bio %>"</p>
-                <p>Genres: <%= profile.favgenres.join(", ") %></p>
-            </div>
+            <p>
+                Username: <br>
+                <%= registerData[0].username %>
+            </p>
+            <p>
+                First Name: <br>
+                <%= registerData[0].firstname %>
+            </p>
+            <p>
+                Last Name: <br>
+                <%= registerData[0].lastname %>
+            </p>
+            <p>
+                E-mail: <br>
+                <%= registerData[0].email %>
+            </p>
+            <p>
+                Gender: <br>
+                <%= registerData[0].gender %>
+            </p>
+
+
         </section>
         <% } %>
 
@@ -37,7 +54,11 @@
                         <% } %>
                 </form>
         <% }) %>
+
     </section>
+
+    <a href="/liken">Kies nu je filters</a>
+
         <% if (matches) { %>
         <h2>Mijn matches:</h2>
         <Section class="my-matches-container">
