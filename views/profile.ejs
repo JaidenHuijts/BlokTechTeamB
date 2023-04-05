@@ -64,7 +64,7 @@
         <Section class="my-matches-container">
             <% matches.forEach(match => { %>
             <Article>
-                <img src=<%= match.image %> alt=<%= match.name %>/>
+                <img loading="lazy" src=<%= match.image %> alt="match-image"/>
                 <h3><%= match.name %></h3>
                 <form action="/profile/removeFromMatches" method="post" class="button-container-profile">
                     <button name="removeMatchButton" type="submit" value="<%= match.id %>" >Delete</button>
