@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     try{
         const getInformation = await festivalModel.find({});
         //console.log(getInformation)
-        
         res.render('./liken', {getInformation});
     } catch (error) {
         console.error(error)
