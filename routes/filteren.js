@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const matchModel = require('../db/models/matchSchema');
-const profileModel = require('../db/models/profileSchema');
 
 
 router.get('/', (req, res) => {
