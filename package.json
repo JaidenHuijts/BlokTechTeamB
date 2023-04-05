@@ -33,6 +33,7 @@
     "slug": "^8.2.2"
   },
   "devDependencies": {
-    "ejs-lint": "^2.0.0"
+    "ejs-lint": "^2.0.0",
+    "eslint": "^8.37.0"
   }
 }
