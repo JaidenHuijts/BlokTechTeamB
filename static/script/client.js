@@ -1,6 +1,8 @@
+//Source Robert, voor het helpen van mijn client side js binnen liken. 
 // variable aanmaken om het hele formulier aan te spreken met alle beelden.
 const formulieren = document.querySelectorAll('form');
 
+// Beschrijven wat er in het hele formulier, forEach gedaan moet worden
 formulieren.forEach(formulier => {
 
     formulier.addEventListener('submit', event => {
@@ -11,7 +13,8 @@ formulieren.forEach(formulier => {
         const data = new URLSearchParams();
         data.set('itemid', formData.get('itemid'));
         
-        // Met fetch haal je data uit de database/api
+        // Met fetch haal je data uit de database/ op welke pagina zichtbaar
+        // Fetch helpt het pad naar bestand te vinden. 
         fetch('/liken',
             {
                 method: "POST",
@@ -20,8 +23,9 @@ formulieren.forEach(formulier => {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }
-        // Vervolg vanuit de fetch, wat ik erna nog mee wilt doen
+        // Vervolg vanuit de fetch, wat ik nu met de data wil doen.
         ).then(() => {
+            // Oproepen 'button img' uit ejs bestand.
             const img = event.target.querySelector('button img');
             console.log(img.classList.contains('hartjevol'));
             
@@ -36,4 +40,5 @@ formulieren.forEach(formulier => {
     })
 
 })
+
 
