@@ -46,7 +46,7 @@ router.post('/match', async (req, res) => {
             console.error(error)
         }
       }
-      res.redirect('/matchen')
+      res.redirect('/profile')
 });
 
 module.exports =  router
